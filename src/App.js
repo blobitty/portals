@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [fillColors, setFillColors] = useState(Array().fill('white'))
+  const [currentColor, setCurrentColor] = useState('blue')
+
+
+  const onFillColor = (i) => {
+  
+    let newFillColors = fillColors.slice(0)
+    newFillColors[i] = currentColor
+    setFillColors(newFillColors)
+  
+  }
+
   return (
     <div className="App">
       <header className="App-header">
