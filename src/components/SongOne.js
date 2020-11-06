@@ -5,6 +5,6 @@ import Kablam from "../assets/svg/Kablam.svg"
 export default class SongOne extends React.Component{
 
     render(){
-        return <Kablam/>
+        return <Kablam path/>
     }
 }
