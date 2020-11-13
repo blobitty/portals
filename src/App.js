@@ -7,7 +7,7 @@ import ColorPalette from './components/ColorPalette'
 
 function App() {
 
-  const [fillColors, setFillColors] = useState(Array(28).fill('white'))
+  const [fillColors, setFillColors] = useState(Array(25).fill('white'))
   const [currentColor, setCurrentColor] = useState('blue')
 
 
