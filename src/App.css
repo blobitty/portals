@@ -48,11 +48,13 @@
 }
 
 .color-swatch {
+  display: flex;
   height: 70px;
   width: 70px;
   border-radius: 7px;
   margin: 9px;
   cursor: pointer;
+  flex-wrap: wrap;
   border: 4px solid black;
 }
 

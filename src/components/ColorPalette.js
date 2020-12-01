@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function ColorPalette(props) {
 
-    const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'turquoise', 'purple', 'pink', 'deeppink']
+    const colors = ['red', 'orange', 'yellow', 'green', 'blue', 
+    'turquoise', 'purple', 'pink', 'deeppink', 'chocolate', 
+    "Chartreuse", "DarkCyan", "IndianRed", "LightSalmon", "MediumAquaMarine", "SeaGreen", "Teal"]
 
     return(
         <div className="color-palette">
