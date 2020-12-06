@@ -27,7 +27,7 @@ function App() {
        <div className="illustration">
 
        {/* <ACAB2 fillColors={fillColors} onFill={onFillColor} /> */}
-       <AlienSpeak fillColors={fillColors} onFill={onFillColor}/>
+       <ACAB fillColors={fillColors} onFill={onFillColor}/>
        </div>
 
 
