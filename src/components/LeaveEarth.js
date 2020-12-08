@@ -13,7 +13,7 @@ export default class LeaveEarth extends React.Component{
             <defs>
             <style>
       {
-        ".prefix__cls-1{onClick={() => this.props.onFill(0)} fill={this.props.fillColors[0]}}.prefix__cls-2{onClick={() => this.props.onFill(1)} fill={this.props.fillColors[1]}}.prefix__cls-3{fill:#0e5c00}.prefix__cls-6{fill:#00a053}.prefix__cls-7{fill:#ec0500}.prefix__cls-8{fill:#ffee64}.prefix__cls-9{fill:#aa5a00}.prefix__cls-10{fill:#a46400}.prefix__cls-11{fill:#174200}.prefix__cls-13{fill:#0e677c}.prefix__cls-15{fill:#8b00ce}.prefix__cls-16{fill:#010061}.prefix__cls-17{fill:#28ffce}.prefix__cls-18{fill:#d6f7ff}.prefix__cls-19{fill:#1c008d}.prefix__cls-20{fill:#8d3c00}.prefix__cls-21{fill:#6d3108}.prefix__cls-22{fill:#5c676a}.prefix__cls-23{fill:#5c00b3}.prefix__cls-24{fill:#ffb000}.prefix__cls-25{fill:#d00000}.prefix__cls-26{fill:#360b00}.prefix__cls-27{fill:#fff}.prefix__cls-28{fill:#ce4f00}.prefix__cls-29{fill:#97e4ff}.prefix__cls-30{fill:#ffa708}"
+        ".prefix__cls-1{fill:#007793}.prefix__cls-2{fill:#421000}.prefix__cls-3{fill:#0e5c00}.prefix__cls-6{fill:#00a053}.prefix__cls-7{fill:#ec0500}.prefix__cls-8{fill:#ffee64}.prefix__cls-9{fill:#aa5a00}.prefix__cls-10{fill:#a46400}.prefix__cls-11{fill:#174200}.prefix__cls-13{fill:#0e677c}.prefix__cls-15{fill:#8b00ce}.prefix__cls-16{fill:#010061}.prefix__cls-17{fill:#28ffce}.prefix__cls-18{fill:#d6f7ff}.prefix__cls-19{fill:#1c008d}.prefix__cls-20{fill:#8d3c00}.prefix__cls-21{fill:#6d3108}.prefix__cls-22{fill:#5c676a}.prefix__cls-23{fill:#5c00b3}.prefix__cls-24{fill:#ffb000}.prefix__cls-25{fill:#d00000}.prefix__cls-26{fill:#360b00}.prefix__cls-27{fill:#fff}.prefix__cls-28{fill:#ce4f00}.prefix__cls-29{fill:#97e4ff}.prefix__cls-30{fill:#ffa708}"
       }
     </style>
   </defs>

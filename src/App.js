@@ -13,6 +13,8 @@ import Kablam from './components/Kablam.js'
 import AlienSpeak from './components/AlienSpeak.js'
 import FunnyLight from './components/FunnyLight.js'
 import LeaveEarth from './components/LeaveEarth.js'
+import AllGoesBad from './components/AllGoesBad.js'
+import Spaceships from './components/Spaceships.js'
 
 import ColorPalette from './components/ColorPalette'
 import Home from './components/Home'
@@ -20,7 +22,7 @@ import Home from './components/Home'
 
 function App() {
 
-  const [fillColors, setFillColors] = useState(Array(22).fill('white'))
+  const [fillColors, setFillColors] = useState(Array(35).fill('white'))
   const [currentColor, setCurrentColor] = useState('blue')
 
 
@@ -70,7 +72,7 @@ function App() {
         </Route>
         </Switch> */}
 
-        <ACAB fillColors={fillColors} onFill={onFillColor} />
+        <Spaceships fillColors={fillColors} onFill={onFillColor} />
 
       </div>
 
