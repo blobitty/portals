@@ -34,11 +34,11 @@ function App() {
   console.log("returns: ", onFillColor)
 
   return (
-<Router>
+/* <Router> */
     <div className="App">
       <div className="container">
      
-     <Switch>
+     {/* <Switch>
      
 
       <Route path="/kablam">
@@ -68,14 +68,17 @@ function App() {
      <Route path="/">
         <Home />
         </Route>
-        </Switch>
+        </Switch> */}
+
+        <ACAB fillColors={fillColors} onFill={onFillColor} />
+
       </div>
 
 
-      {/* <ColorPalette currentColor={currentColor} changeColor={setCurrentColor} /> */}
+      <ColorPalette currentColor={currentColor} changeColor={setCurrentColor} />
 
     </div>
-    </Router>
+    /* </Router> */
   );
 }
 
