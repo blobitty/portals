@@ -15,6 +15,8 @@ import FunnyLight from './components/FunnyLight.js'
 import LeaveEarth from './components/LeaveEarth.js'
 import AllGoesBad from './components/AllGoesBad.js'
 import Spaceships from './components/Spaceships.js'
+import DiamondDark from './components/DiamondDark.js'
+import Numb from './components/Numb.js'
 
 import ColorPalette from './components/ColorPalette'
 import Home from './components/Home'
@@ -72,7 +74,7 @@ function App() {
         </Route>
         </Switch> */}
 
-        <Spaceships fillColors={fillColors} onFill={onFillColor} />
+        <Numb fillColors={fillColors} onFill={onFillColor} />
 
       </div>
 
