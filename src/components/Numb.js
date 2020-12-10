@@ -7,7 +7,14 @@ export default class Numb extends React.Component{
         super(props);
     }
 
+   setFillPaths () {
+        this.props.fillSize(33);
+    }
+
+    
+
     render(){
+        this.setFillPaths();
         return(
             <svg viewBox="0 0 2475 3300">
   <defs>

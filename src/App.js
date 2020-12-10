@@ -24,7 +24,12 @@ import Home from './components/Home'
 
 function App() {
 
-  const [fillColors, setFillColors] = useState(Array(35).fill('white'))
+  const fillPaths = pathData =>{
+      console.log("fillPaths", pathData);
+      return pathData;
+  }
+
+  const [fillColors, setFillColors] = useState(Array(fillPaths).fill('white'))
   const [currentColor, setCurrentColor] = useState('blue')
 
 
@@ -35,7 +40,6 @@ function App() {
     setFillColors(newFillColors)
 
   }
-  console.log("returns: ", onFillColor)
 
   return (
 /* <Router> */
@@ -74,7 +78,7 @@ function App() {
         </Route>
         </Switch> */}
 
-        <Numb fillColors={fillColors} onFill={onFillColor} />
+        <Numb fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
 
       </div>
 
