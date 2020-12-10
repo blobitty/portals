@@ -8,6 +8,15 @@ export default class DiamondDark extends React.Component{
         }
 
 
+        setFillPaths () {
+          this.props.fillSize(42);
+      }
+      
+      componentDidMount(){
+        this.setFillPaths();
+      
+      }
+
         render(){
             return(
                 <svg viewBox="0 0 2487.51 3317" >

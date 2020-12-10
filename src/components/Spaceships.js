@@ -7,6 +7,15 @@ export default class Spaceships extends React.Component{
             super(props);
         }
 
+        setFillPaths () {
+          this.props.fillSize(46);
+      }
+      
+      componentDidMount(){
+        this.setFillPaths();
+      
+      }
+
         render(){
             return(
                 <svg viewBox="0 0 2475.24 3300.1">

@@ -1,17 +1,33 @@
 import React from 'react'
 import Path from './Path'
+import ColorPalette from './ColorPalette'
 
 
 
 export default class ACAB extends React.Component {
   constructor(props) {
     super(props);
+    //this.props.setCurrentColor = this.setCurrentColor.bind(this);
 
   }
+
+
+  setFillPaths () {
+    this.props.fillSize(26);
+}
+
+componentDidMount(){
+  this.setFillPaths();
+  console.log(this.props.currentColor)
+  console.log(this.props.changeColor)
+
+}
+
 
   render() {
     return (
 
+      <div>
       <svg viewBox="0 0 432.33 567.37" >
         <style >
           {
@@ -378,7 +394,8 @@ export default class ACAB extends React.Component {
         </g>
       </svg>
 
-
+      <ColorPalette currentColor={this.props.currentColor} changeColor={()=> this.props.setCurrentColor} />
+</div>
     )
   }
 

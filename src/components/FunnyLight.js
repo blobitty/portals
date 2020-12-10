@@ -7,6 +7,15 @@ export default class FunnyLight extends React.Component{
       super(props);
   }
 
+  setFillPaths () {
+    this.props.fillSize(36);
+}
+
+componentDidMount(){
+  this.setFillPaths();
+
+}
+
     render(){
       return(
         <svg viewBox="0 0 2482.01 3263.92">

@@ -8,6 +8,15 @@ export default class AlienSpeak extends React.Component{
         super(props);
 
     }
+
+    setFillPaths () {
+      this.props.fillSize(28);
+  }
+  
+  componentDidMount(){
+    this.setFillPaths();
+  
+  }
         render(){
             return(
                 <svg viewBox="0 0 2388 3300.13">

@@ -7,6 +7,15 @@ export default class Kablam extends React.Component{
         
     }
 
+    setFillPaths () {
+      this.props.fillSize(45);
+  }
+  
+  componentDidMount(){
+    this.setFillPaths();
+  
+  }
+
     render(){
         return(
             <svg viewBox="0 0 1096.17 1350.82">

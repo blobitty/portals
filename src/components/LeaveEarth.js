@@ -7,6 +7,15 @@ export default class LeaveEarth extends React.Component{
             super(props);
         }
 
+        setFillPaths () {
+          this.props.fillSize(30);
+      }
+      
+      componentDidMount(){
+        this.setFillPaths();
+      
+      }
+
         render(){
             return(
                 <svg id="prefix__Layer_1" data-name="Layer 1" viewBox="0 0 2475 3300">

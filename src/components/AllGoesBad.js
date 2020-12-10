@@ -7,7 +7,14 @@ export default class AllGoesBad extends React.Component{
     constructor(props){
         super(props);
     }
-
+    setFillPaths () {
+      this.props.fillSize(35);
+  }
+  
+  componentDidMount(){
+    this.setFillPaths();
+  
+  }
 
     render(){
         return(

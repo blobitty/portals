@@ -8,6 +8,15 @@ export default class SeeingSigns extends React.Component{
 
     }
 
+    setFillPaths () {
+      this.props.fillSize(13);
+  }
+  
+  componentDidMount(){
+    this.setFillPaths();
+  
+  }
+
         render(){
             return(
 <svg viewBox="0 0 2482.1 3203.86" >

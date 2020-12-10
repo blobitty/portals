@@ -11,10 +11,13 @@ export default class Numb extends React.Component{
         this.props.fillSize(33);
     }
 
+    componentDidMount(){
+      this.setFillPaths();
+
+    }
     
 
     render(){
-        this.setFillPaths();
         return(
             <svg viewBox="0 0 2475 3300">
   <defs>
