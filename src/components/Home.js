@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Home = () => {
-    return(
+    return (
         <div>
-            Welcome to The Portals Coloring Book :) 
+            Welcome to The Portals Coloring Book :)
         </div>
     )
 }

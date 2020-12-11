@@ -4,11 +4,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import ACAB from './components/ACAB.js'
-import Seeing_Signs from './components/Seeing_Signs.js'
+import SeeingSigns from './components/Seeing_Signs.js'
 import Kablam from './components/Kablam.js'
 import AlienSpeak from './components/AlienSpeak.js'
 import FunnyLight from './components/FunnyLight.js'
@@ -18,7 +17,6 @@ import Spaceships from './components/Spaceships.js'
 import DiamondDark from './components/DiamondDark.js'
 import Numb from './components/Numb.js'
 
-import ColorPalette from './components/ColorPalette'
 import Home from './components/Home'
 
 
@@ -35,7 +33,7 @@ function App() {
     //we initially set all svg paths to white to make the image blank outline
   const [fillColors, setFillColors] = useState(Array(fillPaths).fill('white'))
   //The setCurrentColor function will allow for the currentColor to update
-  const [currentColor, setCurrentColor] = useState('blue')
+  const [currentColor, setCurrentColor] = useState('green')
 
 
   const onFillColor = i => {
@@ -59,15 +57,15 @@ function App() {
      
 
       <Route path="/kablam">
-        <Kablam fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <Kablam changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
         
         <Route path="/alien-speak">
-        <AlienSpeak fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <AlienSpeak changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route> 
 
         <Route path="/funny-in-the-light">
-        <FunnyLight fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <FunnyLight changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route> 
 
         <Route exact path="/acab">
@@ -75,27 +73,27 @@ function App() {
         </Route>
 
         <Route path="/seeing-signs">
-        <Seeing_Signs fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <SeeingSigns changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
 
         <Route path="/leave-earth">
-        <LeaveEarth fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <LeaveEarth changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
 
         <Route path="/all-goes-bad">
-        <AllGoesBad fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <AllGoesBad changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
 
         <Route path="/spaceships">
-        <Spaceships fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <Spaceships changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
 
         <Route path="/diamond-dark">
-        <DiamondDark fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <DiamondDark changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
 
         <Route path="/numb">
-        <Numb fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+        <Numb changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
 
      <Route path="/" component={Home}/>

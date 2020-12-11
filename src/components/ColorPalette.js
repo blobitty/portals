@@ -12,7 +12,7 @@ export default function ColorPalette(props) {
             {colors.map(color=> { 
                 const activeClass = props.currentColor === color ? 'color-swatch-active' : '';
                 return (
-                    <div onClick={() => {props.changeColor(color)}, console.log(color)}>
+                    <div onClick={() => {props.changeColor(color)}}>
                         <div className={`color-swatch ${activeClass}`}  style={{backgroundColor: color}}></div>
                     </div>
                 )
