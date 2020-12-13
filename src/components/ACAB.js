@@ -22,7 +22,7 @@ const ACAB = (props) => {
 
     return (
       <div>
-        <button type="button" width="22" height="22" onClick={() => history.push('/')}/>
+        <button type="button" width={200} height={200} onClick={() => history.push('/')}/>
         <svg viewBox="0 0 432.33 567.37" >
           <style >
             {
