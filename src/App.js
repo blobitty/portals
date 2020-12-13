@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
 import ACAB from './components/ACAB.js'
 import SeeingSigns from './components/Seeing_Signs.js'
 import Kablam from './components/Kablam.js'
@@ -22,11 +22,12 @@ import Home from './components/Home'
 
 function App() {
 
+  let history = useHistory();
+
   const fillPaths = pathData =>{
       console.log("fillPaths: ", pathData);
       return pathData;
   }
-
 
   //This array is going to keep track of all the colors we apply, 
   //and which paths you’ve applied them to as they relate to the SVG.
@@ -68,7 +69,7 @@ function App() {
         <FunnyLight changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route> 
 
-        <Route exact path="/acab">
+        <Route exact={true} path="/acab">
         <ACAB changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
 
@@ -96,9 +97,7 @@ function App() {
         <Numb changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
         </Route>
 
-     <Route path="/" component={Home}/>
-      
-        
+     <Route path="/" component={Home}/>    
         </Switch> 
         
       </div>

@@ -370,6 +370,7 @@ export default class AlienSpeak extends React.Component {
           </g>
         </svg>
         <ColorPalette currentColor={this.props.currentColor} changeColor={this.props.changeColor} />
+        <iframe src="https://audiomack.com/embed/playlist/jaquell/ALIENSPEAK02?background=1" scrolling="no" width="100%" height="400" scrollbars="no" frameborder="0"></iframe>      
       </div>
 
     )
