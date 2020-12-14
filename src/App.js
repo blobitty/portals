@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -16,6 +16,9 @@ import AllGoesBad from './components/AllGoesBad.js'
 import Spaceships from './components/Spaceships.js'
 import DiamondDark from './components/DiamondDark.js'
 import Numb from './components/Numb.js'
+import styled from 'styled-components'
+
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 import firebase from "firebase";
 import Home from './components/Home'
@@ -26,17 +29,38 @@ function App() {
   let history = useHistory();
   const firebaseApp = firebase.apps[0];
 
-  const fillPaths = pathData =>{
-      console.log("fillPaths: ", pathData);
-      return pathData;
+  // Configure FirebaseUI.
+  const uiConfig = {
+    // Popup signin flow rather than redirect flow.
+    signInFlow: 'popup',
+    // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+    signInSuccessUrl: '/signedIn',
+    // We will display Google and Facebook as auth providers.
+    signInOptions: [
+      firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+    ],
+    callbacks: {
+      // Avoid redirects after sign-in.
+      signInSuccessWithAuthResult: () => false,
+    },
+  };
+
+
+
+  const fillPaths = pathData => {
+    console.log("fillPaths: ", pathData);
+    return pathData;
   }
 
   //This array is going to keep track of all the colors we apply, 
   //and which paths you’ve applied them to as they relate to the SVG.
-    //we initially set all svg paths to white to make the image blank outline
+  //we initially set all svg paths to white to make the image blank outline
   const [fillColors, setFillColors] = useState(Array(fillPaths).fill('white'))
   //The setCurrentColor function will allow for the currentColor to update
   const [currentColor, setCurrentColor] = useState('green')
+
+  const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
+
 
 
   const onFillColor = i => {
@@ -49,67 +73,102 @@ function App() {
     setFillColors(newFillColors)
 
   }
-  //SVG routed to various name based paths
-  return (
-    <div className="App">
-          
-       <Router> 
 
-      <div className="container">
-     
-     <Switch>
-     
+  // Listen to the Firebase Auth state and set the local state.
+  useEffect(() => {
+    const unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
+      setIsSignedIn(!!user);
+    });
+    return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
+  }, []);
 
-      <Route path="/kablam">
-        <Kablam changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route>
-        
-        <Route path="/alien-speak">
-        <AlienSpeak changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route> 
+  
+//UI
+  if (!isSignedIn) {
+    return (
+      <div className="AppTwo">
+        <div className="container">
+        <Title>Sign Into The Portal</Title>
+        <p style={{ textAlign: "center", fontFamily:"Comic Sans MS"}}>Please sign-in with your phone number. No password required</p>
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} className="AppTwo" />
+        </div>
+      </div>
+    );
+  } else {
+    //SVG routed to various name based paths
+    return (
+      <div className="App">
 
-        <Route path="/funny-in-the-light">
-        <FunnyLight changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route> 
+        <Router>
 
-        <Route exact={true} path="/acab">
-        <ACAB changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route>
+          <div className="container">
 
-        <Route path="/seeing-signs">
-        <SeeingSigns changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route>
+            <Switch>
 
-        <Route path="/leave-earth">
-        <LeaveEarth changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route>
 
-        <Route path="/all-goes-bad">
-        <AllGoesBad changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route>
+              <Route path="/kablam">
+                <Kablam changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
 
-        <Route path="/spaceships">
-        <Spaceships changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route>
+              <Route path="/alien-speak">
+                <AlienSpeak changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
 
-        <Route path="/diamond-dark">
-        <DiamondDark changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route>
+              <Route path="/funny-in-the-light">
+                <FunnyLight changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
 
-        <Route path="/numb">
-        <Numb changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
-        </Route>
+              <Route exact={true} path="/acab">
+                <ACAB changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
 
-     <Route path="/" component={Home}/>    
-        </Switch> 
-        
+              <Route path="/seeing-signs">
+                <SeeingSigns changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
+
+              <Route path="/leave-earth">
+                <LeaveEarth changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
+
+              <Route path="/all-goes-bad">
+                <AllGoesBad changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
+
+              <Route path="/spaceships">
+                <Spaceships changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
+
+              <Route path="/diamond-dark">
+                <DiamondDark changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
+
+              <Route path="/numb">
+                <Numb changeColor={setCurrentColor} currentColor={currentColor} fillSize={fillPaths} fillColors={fillColors} onFill={onFillColor} />
+              </Route>
+
+              <Route path="/" component={Home} />
+            </Switch>
+
+          </div>
+
+        </Router>
+
       </div>
 
-      </Router> 
-
-    </div>
-
-  );
+    );
+  }
 }
+
+const Title = styled.h1`
+  text-align: center;
+  color: #8FBC8F;
+  padding: 16px;
+  font-family: "Comic Sans MS";
+  margin-top: 0px;
+  font-style: normal;
+  opacity: 0.9;
+  font-size: 10vmin;
+  background-color: #FFFAFA;
+`;
 
 export default App;

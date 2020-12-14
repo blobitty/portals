@@ -4,6 +4,13 @@
 
 }
 
+.AppTwo {
+  text-align: center;
+  background-color: #769273;
+  margin:0px;
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -118,7 +125,7 @@
   height: 40px;
   width: 50%;
   align-self: start;
-  background-color: rgb(91, 114, 88);
+  background-color: #5b7258;
   color: white;
   font-size: 20px;
   padding: 10px;
