@@ -14,10 +14,14 @@ const FunnyLight = (props) =>  {
   });
 
     return (
-      <div>
-          <button type="button" width={200} height={200} onClick={() => history.push('/')}/>
+      <div className="coloring-page">
+        <div className="palette-container" >
+      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
+      </div >
 
-        <svg viewBox="0 0 2482.01 3263.92">
+        <div className="coloring-image-container" >
+        <svg className="svg-image" viewBox="0 0 2482.01 3263.92">
           <defs>
             <style>
               {
@@ -484,9 +488,11 @@ const FunnyLight = (props) =>  {
             <Path d="M2314.05 3251.91l9.85 5h39.4l-8.12-5h-41.13zM2224.5 3234.72a68.92 68.92 0 00-10 4.6c-3.45 2.06-10.47 8.32-14.49 12.6h86.51l-3.52-1.6c-40-18.1-46.5-19.8-58.5-15.6zM2200 3251.92c-1.81 1.92-3 3.44-3 4s17.7 1 50.3 1h50.2l-11-5z" />
           </g>
         </svg>
-
-        <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
-        <iframe src="https://audiomack.com/embed/playlist/jaquell/fitl-03?background=1" scrolling="no" width="100%" height="400" scrollbars="no" frameborder="0"></iframe>
+        <button type="button"  className={"download-button"} >Download Portal</button>
+        </div>
+        <div>
+        <iframe src="https://audiomack.com/embed/playlist/jaquell/fitl-03?background=1" scrolling="no"  height={"100%"} scrollbars="no" frameborder="0"></iframe>
+        </div>
       </div>
     )
   
