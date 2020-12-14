@@ -2,11 +2,18 @@ import React, {useEffect} from 'react'
 import Path from './Path'
 import ColorPalette from './ColorPalette'
 import { useHistory } from "react-router-dom";
+import {saveSvgAsPng} from 'save-svg-as-png';
+import swal from 'sweetalert';
+
 
 const Spaceships = (props) =>  {
 
   const history = useHistory();
 
+  const saveImage = () => {
+    saveSvgAsPng(document.getElementById("svg-image"), "spaceships_color.png");
+    swal("Portal Download Complete", "The Portal has now been saved to your machine 👾", "success");
+    }
   
   useEffect(() => {
     // Update the document title using the browser API
@@ -21,7 +28,7 @@ const Spaceships = (props) =>  {
       </div >
 
         <div className="coloring-image-container" >
-        <svg viewBox="0 0 2475.24 3300.1">
+        <svg id="svg-image" viewBox="0 0 2475.24 3300.1">
           <defs>
             <radialGradient
               id="prefix__radial-gradient"
@@ -761,7 +768,7 @@ const Spaceships = (props) =>  {
             </g>
           </g>
         </svg>
-        <button type="button"  className={"download-button"} >Download Portal</button>
+        <button type="button" onClick={saveImage} className={"download-button"} >Download Portal</button>
         </div>
         <div >
         <iframe src="https://audiomack.com/embed/playlist/jaquell/space-08?background=1" scrolling="no" height={"100%"} scrollbars="no" frameborder="0"></iframe>

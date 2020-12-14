@@ -2,11 +2,19 @@ import React, {useEffect} from 'react'
 import Path from './Path'
 import ColorPalette from './ColorPalette'
 import { useHistory } from "react-router-dom";
+import {saveSvgAsPng} from 'save-svg-as-png';
+import swal from 'sweetalert';
+
 
 const Kablam = (props) => {
   
   const history = useHistory();
 
+
+  const saveImage = () => {
+    saveSvgAsPng(document.getElementById("svg-image"), "kablam_color.png");
+    swal("Portal Download Complete", "The Portal has now been saved to your machine 👾", "success");
+    }
   
   useEffect(() => {
     // Update the document title using the browser API
@@ -20,7 +28,7 @@ const Kablam = (props) => {
       </div >
 
         <div className="coloring-image-container" >
-        <svg className="svg-image" viewBox="0 0 1096.17 1350.82">
+        <svg id="svg-image" viewBox="0 0 1096.17 1350.82">
           <defs>
             <style>
               {
@@ -1264,7 +1272,7 @@ const Kablam = (props) => {
             </g>
           </g>
         </svg>
-        <button type="button"  className={"download-button"} >Download Portal</button>
+        <button type="button" onClick={saveImage} className={"download-button"} >Download Portal</button>
         </div>
         <div>
         <iframe src="https://audiomack.com/embed/album/jaquell/enter-the-portal?background=1" scrolling="no" scrollbars="no" frameborder="0" height={"100%"}></iframe>

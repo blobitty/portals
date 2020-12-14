@@ -2,13 +2,19 @@ import React, {useEffect} from 'react'
 import Path from './Path'
 import ColorPalette from './ColorPalette'
 import { useHistory } from "react-router-dom";
+import {saveSvgAsPng} from 'save-svg-as-png';
+import swal from 'sweetalert';
 
 const DiamondDark = (props) =>  {
 
   
   const history = useHistory();
 
-  
+  const saveImage = () => {
+    saveSvgAsPng(document.getElementById("svg-image"), "dID_color.png");
+    swal("Portal Download Complete", "The Portal has now been saved to your machine 👾", "success");
+    }
+
   useEffect(() => {
     // Update the document title using the browser API
     props.fillSize(10);
@@ -22,7 +28,7 @@ const DiamondDark = (props) =>  {
       </div >
 
         <div className="coloring-image-container" >
-        <svg viewBox="0 0 2487.51 3317" >
+        <svg id="svg-image" viewBox="0 0 2487.51 3317" >
           <defs>
             <style>
               {
@@ -535,7 +541,7 @@ const DiamondDark = (props) =>  {
           <Path d="M647.44 1961.1c-1.18.52-2.37 1-3.57 1.51s-2.6.89-3.92 1.26c2.05-.67 4.63-1.62 7.49-2.77z" />
 
         </svg>
-        <button type="button"  className={"download-button"} >Download Portal</button>
+        <button type="button" onClick={saveImage} className={"download-button"} >Download Portal</button>
         </div>
         <div >
         <iframe src="https://audiomack.com/embed/playlist/jaquell/ditd-09?background=1" scrolling="no" height={"100%"} scrollbars="no" frameborder="0"></iframe>
