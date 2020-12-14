@@ -26,7 +26,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <Title> 🎨 Enter the Portal Coloring Book 🖼️ </Title>
+            <Title>Enter the Portal Coloring Book 🎨 </Title>
 
             <div id="image-gallery" style={galleryStyle}>
                 
@@ -90,7 +90,7 @@ const Title = styled.h1`
   text-align: center;
   color: #8FBC8F;
   padding: 16px;
-  font-family: "Comic Sans MS";
+  font-family: "Marker Felt";
   margin-top: 0px;
   font-style: normal;
   font-size: 15vmin;
