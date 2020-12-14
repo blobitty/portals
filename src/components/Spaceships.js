@@ -14,8 +14,13 @@ const Spaceships = (props) =>  {
   });
 
     return (
-      <div>
-        <button type="button" width={200} height={200} onClick={() => history.push('/')}/>
+      <div className="coloring-page">
+        <div className="palette-container" >
+      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
+      </div >
+
+        <div className="coloring-image-container" >
         <svg viewBox="0 0 2475.24 3300.1">
           <defs>
             <radialGradient
@@ -756,8 +761,12 @@ const Spaceships = (props) =>  {
             </g>
           </g>
         </svg>
-        <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
-        <iframe src="https://audiomack.com/embed/playlist/jaquell/space-08?background=1" scrolling="no" width="100%" height="400" scrollbars="no" frameborder="0"></iframe>
+        <button type="button"  className={"download-button"} >Download Portal</button>
+        </div>
+        <div >
+        <iframe src="https://audiomack.com/embed/playlist/jaquell/space-08?background=1" scrolling="no" height={"100%"} scrollbars="no" frameborder="0"></iframe>
+        </div >
+      
       </div>
 
     )

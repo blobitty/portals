@@ -14,9 +14,13 @@ const LeaveEarth =  (props) =>  {
   });
   
     return (
-      <div>
+      <div className="coloring-page">
+        <div className="palette-container" >
+      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
+      </div >
 
-        <button type="button" width={200} height={200} onClick={() => history.push('/')}/>
+        <div className="coloring-image-container" >
         <svg id="prefix__Layer_1" data-name="Layer 1" viewBox="0 0 2475 3300">
           <defs>
             <style>
@@ -408,9 +412,11 @@ const LeaveEarth =  (props) =>  {
             />
           </g>
         </svg>
-        <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
-        <iframe src="https://audiomack.com/embed/playlist/jaquell/leavee-06?background=1" scrolling="no" width="100%" height="400" scrollbars="no" frameborder="0"></iframe>
-
+        <button type="button"  className={"download-button"} >Download Portal</button>
+        </div>
+        <div >        
+          <iframe src="https://audiomack.com/embed/playlist/jaquell/leavee-06?background=1" scrolling="no" height={"100%"} scrollbars="no" frameborder="0"></iframe>
+        </div >
 </div>
     )
 }
