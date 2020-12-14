@@ -26,7 +26,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <Title>Welcome to The Portals Coloring Book :) </Title>
+            <Title> 🎨 Enter the Portal Coloring Book 🖼️ </Title>
 
             <div id="image-gallery" style={galleryStyle}>
                 
@@ -87,13 +87,23 @@ const Home = () => {
 
 
 const Title = styled.h1`
-  font-size: 1.5em;
   text-align: center;
-  color: palevioletred;
+  color: #8FBC8F;
+  padding: 16px;
+  font-family: "Comic Sans MS";
+  margin-top: 0px;
+  font-style: normal;
+  font-size: 15vmin;
 `;
 
+const HomeContainer = styled.div`
+    background-image: url("https://hastingsmuseum.org/wp-content/uploads/2019/07/starry-night-bkgd-1.jpg");
+
+
+`;
+
+
 const galleryStyle = {
-    margin: ".5rem 2rem 4rem",
     display: "flex",
     flexWrap: 'wrap',
     justifyContent: 'center'

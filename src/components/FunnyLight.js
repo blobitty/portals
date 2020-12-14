@@ -1,21 +1,22 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Path from './Path'
 import ColorPalette from './ColorPalette'
+import { useHistory } from "react-router-dom";
 
-export default class FunnyLight extends React.Component {
+const FunnyLight = (props) =>  {
 
-  setFillPaths() {
-    this.props.fillSize(36);
-  }
+  const history = useHistory();
 
-  componentDidMount() {
-    this.setFillPaths();
+  
+  useEffect(() => {
+    // Update the document title using the browser API
+    props.fillSize(10);
+  });
 
-  }
-
-  render() {
     return (
       <div>
+          <button type="button" width={200} height={200} onClick={() => history.push('/')}/>
+
         <svg viewBox="0 0 2482.01 3263.92">
           <defs>
             <style>
@@ -24,7 +25,7 @@ export default class FunnyLight extends React.Component {
               }
             </style>
           </defs>
-          <g onClick={() => this.props.onFill(0)} fill={this.props.fillColors[0]} id="prefix__Layer_2" data-name="Layer 2">
+          <g onClick={() => props.onFill(0)} fill={props.fillColors[0]} id="prefix__Layer_2" data-name="Layer 2">
             <g id="prefix__Boom">
               <Path
                 className="prefix__cls-1"
@@ -36,7 +37,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(1)} fill={this.props.fillColors[1]} id="prefix__Layer_3" data-name="Layer 3">
+          <g onClick={() => props.onFill(1)} fill={props.fillColors[1]} id="prefix__Layer_3" data-name="Layer 3">
             <Path
               className="prefix__cls-2"
               d="M839.3 1886.22c-16-13.6-36-32.8-46.7-44.8-7.3-8.2-18.7-20.6-25.3-27.5s-12.9-14.3-14-16.5-4.6-11.4-7.6-20.5c-10.5-31.3-18.9-48.7-42.6-87.5-36.2-59-48.6-83.7-63.7-126.4-5.8-16.3-5.5-17.6.5-2.6 7.2 17.8 25.9 56.5 35.2 72.7 4.5 7.9 15.7 26.2 24.9 40.8 28.8 45.6 33.6 54.8 46 88.5 7.9 21.3 10.4 26.4 18 35.9 3.4 4.2 6.3 7.6 6.4 7.6.4 0-18.9-57.1-21.2-62.7-6.4-15.6-23-46.7-44.2-82.8-19.7-33.6-28.1-48.7-38.4-69.4-20.6-41-35.5-84.5-40.2-116.8-2.4-16.7-1.6-41.4 2.1-58.8 4.7-22.8 13-45.9 20-55.7 4.3-5.9 3.6-5.9-9.1-1.3-9.3 3.4-16.7 5.1-46.1 10.5-22.3 4.1-24.6 5.3-29.4 14.8-7.3 14.3-13.2 37.4-17.5 68.7-2.6 18-2.6 61.1-.1 81 5.6 44.5 20.9 93.9 43.6 141 26.4 54.5 57.2 99.8 83.3 122.5 13.8 12.1 14.7 12.5 58.5 30.9 19.9 8.3 31.6 16.4 60.3 41.6 8 6.9 15.6 13.3 17 14 3.5 1.8 12.1 3.3 23.2 4 9.1.58 9.3.58 7.1-1.2zm-270.7-474.1c2.2-12.6 13.3-24.5 29.3-31.3 3.6-1.6 6.8-2.9 7-2.9s.1 1.5-.3 3.2-1.1 8.9-1.6 15.8-1.2 15.3-1.6 18.6l-.6 6.2-4.9 2.3a21.82 21.82 0 01-10.4 2.1c-6.5-.2-10.1-1.8-14.4-6.7-2.7-3.2-3.1-4.1-2.5-7.3zm-2.6 69.5c0-10.5 9.8-23.7 22.5-30.4l6-3.2.7 8.2c.3 4.5 1.4 12.5 2.3 17.7 1.9 10.9 2.2 10.4-7.4 14.2-7.2 2.8-17.5 3.1-21.4.5-2.4-1.5-2.7-2.4-2.7-7zm6.6 54.9c-1.8-4.1-1.9-5.2-.8-9.4 1.7-6.4 9.6-13.8 20.5-19.2 4.5-2.2 8.7-4 9.3-4s1.5 2.5 1.9 5.7 1.7 11.1 2.9 17.5l2.3 11.8-7.9 3c-14.5 5.6-24.5 3.7-28.2-5.4zm20.4 74.4c-1.6-1.6-2-3.3-2-7.9 0-5.2.5-6.6 4-11.9a93.09 93.09 0 0111.1-12.7c3.9-3.6 7.3-6.4 7.5-6.2s1.8 5.4 3.4 11.3 3.8 13.6 4.9 16.8a52.64 52.64 0 012.1 6.7c0 .4-3.2 2.4-7.1 4.3-10 5-18.6 4.9-23.9-.4zm64.9 55.6c-1.2 1.3-5.8 4.2-10.3 6.6-7.2 3.8-8.9 4.3-14.8 4.3s-7-.3-10.5-3.1c-4.8-3.9-8.3-9.9-8.3-14.4 0-5.2 5.3-13.5 13.8-21.8 4.2-3.9 7.8-7.2 8.1-7.2s1.9 2.1 3.6 4.8 7 10 11.8 16.6l8.8 11.8zm34.6 79.4c-3.4 3.3-3.9 3.5-10.8 3.5-8.3 0-15.6-3-19.1-7.8-3-4.1-3-18.3.1-24.9 2.4-5.2 9.3-13.2 13.8-15.9a15.57 15.57 0 013.6-1.9c.7 0 10.2 12.1 17.2 22.1 2.6 3.7 4.7 7.7 4.7 9 0 3.3-5 11.6-9.5 15.9z"
@@ -47,13 +48,13 @@ export default class FunnyLight extends React.Component {
               d="M1120.5 2041.72l-6 .7c-12 1.4-25.7 3.7-32 5.4-4.6 1.3-6.5 1.5-6.5.7 0-2.9-3.6-5-19.2-11a902.51 902.51 0 01-138.8-68.1c-15.1-9.2-41.2-26.1-51.4-33.3l-5.9-4.2 5.4-2.5c7.8-3.6 15.1-3.4 21 .4 10.1 6.6 45.5 28.1 59.9 36.3 40.4 23.2 97.1 48.5 152.9 68.3z"
             />
           </g>
-          <g onClick={() => this.props.onFill(2)} fill={this.props.fillColors[2]} id="prefix__Layer_4" data-name="Layer 4">
+          <g onClick={() => props.onFill(2)} fill={props.fillColors[2]} id="prefix__Layer_4" data-name="Layer 4">
             <Path
               className="prefix__cls-3"
               d="M690 1741.42c4-3.6 1.7-14-5.1-23.4-2.4-3.3-4.9-6.1-5.5-6.1-2.3 0-10.3 8.1-11.5 11.7-1.8 5.4-1.5 11 .7 13.4 5.2 5.7 17.2 8.2 21.4 4.4zM573.5 1480.42l7.4-.2a43.66 43.66 0 007.7-.6c.2-.2.1-5.5-.3-11.6l-.8-11.3-4.8 4.2c-6.1 5.4-9.9 11.9-9.5 16.2zM631 1667.92c4.3 0 15-3.6 15-5.1 0-.5-2.1-4.7-4.7-9.4s-5.3-8.5-5.8-8.5c-1.2 0-6.8 5.6-10.3 10.4-4.6 6-1.6 12.6 5.8 12.6zM600 1602.12c0 4.3 3.7 5.3 11.1 3.2 3.3-.9 5.9-1.8 5.9-2s-1.2-3.6-2.7-7.6a70.11 70.11 0 00-3.2-8c-.7-.8-6.6 5-9.5 9.2a10.91 10.91 0 00-1.6 5.2zM586 1415.92c4.3 0 5-.3 5-1.9 0-1.1 1.6-8.1 3.5-15.7s3.3-13.9 3.2-14c-.6-.6-9.5 5-12.5 7.9-4.2 4.1-7.8 10.3-8.7 14.9-.6 3.1-.3 4.1 1.9 6.2 2 2.1 3.5 2.6 7.6 2.6zM594.5 1523.12c-1-5-1.8-9.2-1.9-9.2-.6 0-5.6 3.8-8.4 6.4-4.2 3.9-6.2 7.6-6.2 11.6 0 2.6.6 3.3 3.7 4.6s4.5 1.4 9.5.3c4.4-1 5.7-1.7 5.4-2.9-.3-.8-1.2-5.7-2.1-10.8z"
             />
           </g>
-          <g onClick={() => this.props.onFill(3)} fill={this.props.fillColors[3]} id="prefix__Layer_5" data-name="Layer 5">
+          <g onClick={() => props.onFill(3)} fill={props.fillColors[3]} id="prefix__Layer_5" data-name="Layer 5">
             <g id="prefix__robot5">
               <Path
                 className="prefix__cls-4"
@@ -65,7 +66,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(3)} fill={this.props.fillColors[3]} id="prefix__Layer_6" data-name="Layer 6">
+          <g onClick={() => props.onFill(3)} fill={props.fillColors[3]} id="prefix__Layer_6" data-name="Layer 6">
             <g id="prefix__robot1">
               <Path
                 className="prefix__cls-5"
@@ -73,7 +74,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(4)} fill={this.props.fillColors[4]} id="prefix__Layer_7" data-name="Layer 7">
+          <g onClick={() => props.onFill(4)} fill={props.fillColors[4]} id="prefix__Layer_7" data-name="Layer 7">
             <g id="prefix__robot2">
               <Path
                 className="prefix__cls-6"
@@ -81,14 +82,14 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(5)} fill={this.props.fillColors[5]} id="prefix__Layer_8" data-name="Layer 8">
+          <g onClick={() => props.onFill(5)} fill={props.fillColors[5]} id="prefix__Layer_8" data-name="Layer 8">
             <Path
               className="prefix__cls-7"
               d="M2398.5 1313.42c-1.5 9.7-5.9 29.7-7.6 34.3l-.9 2.3-4.2-2.5c-12.6-7.2-30.3-11-51.8-11h-15.5l-13.5 4.6c-15.4 5.2-23 8.7-34.8 16.4-4.6 3-8.7 5.2-9.2 4.9a100.53 100.53 0 01-6.9-7.9c-26.4-32.3-45.5-80.3-51.6-129.6-1.5-12.5-1.9-31.6-.7-35.7s23.4-19.7 41.2-29.1c17-8.9 37.9-16.2 52.5-18.1 10.6-1.5 29-.4 33.4 1.9 10 5.1 24.1 21.8 35.4 42.1 7.6 13.8 21 42.5 22.7 48.9.7 2.5 3.1 10.6 5.5 18 7.7 23.9 9.2 39.3 6 60.5z"
               id="prefix__robot4"
             />
           </g>
-          <g onClick={() => this.props.onFill(6)} fill={this.props.fillColors[6]} id="prefix__Layer_9" data-name="Layer 9">
+          <g onClick={() => props.onFill(6)} fill={props.fillColors[6]} id="prefix__Layer_9" data-name="Layer 9">
             <g id="prefix__Frame">
               <Path
                 className="prefix__cls-8"
@@ -96,7 +97,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(7)} fill={this.props.fillColors[7]} id="prefix__Layer_10" data-name="Layer 10">
+          <g onClick={() => props.onFill(7)} fill={props.fillColors[7]} id="prefix__Layer_10" data-name="Layer 10">
             <g id="prefix__glasses">
               <Path
                 className="prefix__cls-9"
@@ -110,7 +111,7 @@ export default class FunnyLight extends React.Component {
             id="prefix__Layer_11"
             data-name="Layer 11"
           />
-          <g onClick={() => this.props.onFill(8)} fill={this.props.fillColors[8]} id="prefix__Layer_12" data-name="Layer 12">
+          <g onClick={() => props.onFill(8)} fill={props.fillColors[8]} id="prefix__Layer_12" data-name="Layer 12">
             <g id="prefix__alien">
               <Path
                 className="prefix__cls-11"
@@ -118,7 +119,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(9)} fill={this.props.fillColors[9]} id="prefix__Layer_13" data-name="Layer 13">
+          <g onClick={() => props.onFill(9)} fill={props.fillColors[9]} id="prefix__Layer_13" data-name="Layer 13">
             <g id="prefix__EarthWater">
               <Path
                 className="prefix__cls-12"
@@ -130,7 +131,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(10)} fill={this.props.fillColors[10]} id="prefix__Layer_14" data-name="Layer 14">
+          <g onClick={() => props.onFill(10)} fill={props.fillColors[10]} id="prefix__Layer_14" data-name="Layer 14">
             <g id="prefix__EarthGreen">
               <Path
                 className="prefix__cls-13"
@@ -138,7 +139,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(11)} fill={this.props.fillColors[11]} id="prefix__Layer_15" data-name="Layer 15">
+          <g onClick={() => props.onFill(11)} fill={props.fillColors[11]} id="prefix__Layer_15" data-name="Layer 15">
             <g id="prefix__BKGD1">
               <Path
                 className="prefix__cls-14"
@@ -146,7 +147,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(12)} fill={this.props.fillColors[12]} id="prefix__Layer_16" data-name="Layer 16">
+          <g onClick={() => props.onFill(12)} fill={props.fillColors[12]} id="prefix__Layer_16" data-name="Layer 16">
             <g id="prefix__RingOutline">
               <Path
                 className="prefix__cls-15"
@@ -154,7 +155,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(13)} fill={this.props.fillColors[13]} id="prefix__Layer_17" data-name="Layer 17">
+          <g onClick={() => props.onFill(13)} fill={props.fillColors[13]} id="prefix__Layer_17" data-name="Layer 17">
             <g id="prefix__smoke">
               <Path
                 className="prefix__cls-16"
@@ -162,7 +163,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(14)} fill={this.props.fillColors[14]} id="prefix__Layer_18" data-name="Layer 18">
+          <g onClick={() => props.onFill(14)} fill={props.fillColors[14]} id="prefix__Layer_18" data-name="Layer 18">
             <g id="prefix__BKGD2">
               <Path
                 className="prefix__cls-17"
@@ -174,7 +175,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(15)} fill={this.props.fillColors[15]} id="prefix__Layer_19" data-name="Layer 19">
+          <g onClick={() => props.onFill(15)} fill={props.fillColors[15]} id="prefix__Layer_19" data-name="Layer 19">
             <g id="prefix__pantsAccent">
               <Path
                 className="prefix__cls-18"
@@ -182,7 +183,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(16)} fill={this.props.fillColors[16]} id="prefix__Layer_20" data-name="Layer 20">
+          <g onClick={() => props.onFill(16)} fill={props.fillColors[16]} id="prefix__Layer_20" data-name="Layer 20">
             <g id="prefix__pants">
               <Path
                 className="prefix__cls-19"
@@ -200,7 +201,7 @@ export default class FunnyLight extends React.Component {
             id="prefix__Layer_21"
             data-name="Layer 21"
           />
-          <g onClick={() => this.props.onFill(17)} fill={this.props.fillColors[17]} id="prefix__Layer_22" data-name="Layer 22">
+          <g onClick={() => props.onFill(17)} fill={props.fillColors[17]} id="prefix__Layer_22" data-name="Layer 22">
             <g id="prefix__Couch">
               <Path
                 className="prefix__cls-21"
@@ -208,7 +209,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(18)} fill={this.props.fillColors[18]} id="prefix__Layer_23" data-name="Layer 23">
+          <g onClick={() => props.onFill(18)} fill={props.fillColors[18]} id="prefix__Layer_23" data-name="Layer 23">
             <g id="prefix__shirt2">
               <Path
                 className="prefix__cls-22"
@@ -224,7 +225,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(19)} fill={this.props.fillColors[19]} id="prefix__Layer_24" data-name="Layer 24">
+          <g onClick={() => props.onFill(19)} fill={props.fillColors[19]} id="prefix__Layer_24" data-name="Layer 24">
             <g id="prefix__bagStrap">
               <Path
                 className="prefix__cls-23"
@@ -232,21 +233,21 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(20)} fill={this.props.fillColors[20]} id="prefix__Layer_25" data-name="Layer 25">
+          <g onClick={() => props.onFill(20)} fill={props.fillColors[20]} id="prefix__Layer_25" data-name="Layer 25">
             <Path
               d="M1121 3058.92c-6.7-64.3-11.8-94.7-24.5-144.5-7.9-31.2-23.1-87-29.2-107.5-10.4-35.1-25.4-69.8-39.8-92.1-4.4-6.8-4.7-7-7.8-6.4-6.8 1.4-6.7 1.3-5 4.5 2.1 4.3.5 6.4-9 11.1-4.5 2.3-12.3 6.6-17.3 9.6a108.1 108.1 0 01-14.2 7.3l-5.1 1.9-3.6-4.9c-3.6-4.9-3.7-5-6-3.2a8.28 8.28 0 00-2.5 2.2 52.29 52.29 0 004.9 6.3c15.4 18 30 42.5 39.6 66.7 3.4 8.6 11.5 38.4 11.5 42 0 .8-2.3-5.2-5.1-13.4-8.9-26.6-24.4-57.2-38.4-76.1-7.4-10-18.9-22.5-20.6-22.5-.6 0 1 2.6 3.4 5.8 5.8 7.5 18 26.3 24.5 37.9 22.4 39.4 36.9 90.6 42.7 151.3 4.5 47.5 6.8 134.9 4.5 169-1.2 17.4-4.1 45.4-7.5 72-4.7 36.7-6.9 46.9-14.2 67.8l-2.92 8.2H1014c.52-2.19 1.21-5 2-8 7.8-30.8 14.3-84.8 15.7-129.5.4-12.7.9-21.9 1.1-20.5s.2 18.5-.1 38c-.4 26.2-1.1 40.5-2.6 54.6-2.1 19.3-6.6 47.2-9.9 61.9-.32 1.39-.59 2.55-.84 3.5h102.8c.13-3 .64-7.63 1.34-15 5.2-56.7 4.5-110.4-2.5-178zm-24-40.9c0 7.4.2 7.4-28 7.7l-24.7.4-.6-3.4c-.3-1.8-.9-9.6-1.3-17.4l-.6-14 3.3-1.1c7.9-2.5 24.4-1.2 33.6 2.8 9.9 4.2 18.3 15.7 18.3 24.98zm-83.3-161.9c-.3.8-.6.5-.6-.6s.2-1.7.5-1.3a2 2 0 01.1 1.9zm-5.9-46.2c-1.3 0-3.7-3.8-8.3-13L993 2784l7.6-5.1c7.5-4.9 7.8-5 15.3-5 12.4.1 24.2 6.3 29.8 15.7 3.3 5.6 2.5 7.6-4.3 10.8-5.3 2.52-30 9.52-33.6 9.52zm16.1 57c-2-8.3-3.3-15-3-15s2.9-.7 5.6-1.5c6-1.8 19.1-1.3 25.5 1 8.6 3 16 11.7 16 18.8 0 5.6-3.2 7.3-19.6 10.6-21.3 4.3-20.1 5-24.5-13.9zm18.6 57a54 54 0 0111.6-1.9c11.2-.2 24.9 6 30.2 13.7 4.8 6.9 6.6 20.3 3.2 23.2-1.7 1.4-34.4 3.9-36.7 2.8a22.93 22.93 0 00-6.5-.8h-4.9l-1.3-14.8c-2.1-22.5-2.6-20.2 4.4-22.2zm33.7 284.1c-4 2-6.3 2.3-15.2 2.4-12.6 0-21.5-2.2-23.1-5.9-.8-1.6-.6-6.8.5-18.2.8-8.7 1.8-20.3 2.2-25.7s.9-9.7 1.1-9.7a16.67 16.67 0 013.3 2c1.5 1.1 8.3 4.5 15.1 7.5 19.9 8.9 26.3 14.3 29 24.5 2.3 8.8-3 18.3-12.9 23.08zm19.3-99.3c-4.9 2.2-23.5 1-37.8-2.4-6.7-1.6-12.2-4.5-14-7.5-.6-.9-.7-8.5-.2-20.2.4-10.3.9-18.7 1.1-18.7s5.4.7 11.7 1.5c12.3 1.6 22.5 4.3 29.7 8 5.4 2.7 12.5 10.1 14.7 15.3 3.6 8.5.9 21.2-5.2 24z"
               fill="#1db24b"
               id="prefix__bagMainStrap"
             />
           </g>
-          <g onClick={() => this.props.onFill(21)} fill={this.props.fillColors[21]} id="prefix__Layer_26" data-name="Layer 26">
+          <g onClick={() => props.onFill(21)} fill={props.fillColors[21]} id="prefix__Layer_26" data-name="Layer 26">
             <Path
               d="M1012.1 3026.92c-.5 0-2.1-2.4-3.5-5.3-2.8-5.8-4.3-17.5-3.2-25 .7-4.3 3.8-9.7 5.5-9.7.4 0 1.1 4.8 1.4 10.7 1 15.2.9 29.3-.2 29.3z"
               fill="#fdc27c"
               id="prefix__ShirtButton"
             />
           </g>
-          <g onClick={() => this.props.onFill(22)} fill={this.props.fillColors[22]} id="prefix__Layer_27" data-name="Layer 27">
+          <g onClick={() => props.onFill(22)} fill={props.fillColors[22]} id="prefix__Layer_27" data-name="Layer 27">
             <g id="prefix__glassesFrame">
               <Path
                 className="prefix__cls-26"
@@ -254,7 +255,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(23)} fill={this.props.fillColors[23]} id="prefix__Layer_28" data-name="Layer 28">
+          <g onClick={() => props.onFill(23)} fill={props.fillColors[23]} id="prefix__Layer_28" data-name="Layer 28">
             <g id="prefix__jqHair">
               <Path
                 className="prefix__cls-27"
@@ -282,7 +283,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(24)} fill={this.props.fillColors[24]} id="prefix__Layer_29" data-name="Layer 29">
+          <g onClick={() => props.onFill(24)} fill={props.fillColors[24]} id="prefix__Layer_29" data-name="Layer 29">
             <g id="prefix__shirt1">
               <Path
                 className="prefix__cls-28"
@@ -302,7 +303,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(25)} fill={this.props.fillColors[25]} id="prefix__Layer_30" data-name="Layer 30">
+          <g onClick={() => props.onFill(25)} fill={props.fillColors[25]} id="prefix__Layer_30" data-name="Layer 30">
             <g id="prefix__JQSkin">
               <Path
                 className="prefix__cls-29"
@@ -330,7 +331,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(26)} fill={this.props.fillColors[26]} id="prefix__Layer_31" data-name="Layer 31">
+          <g onClick={() => props.onFill(26)} fill={props.fillColors[26]} id="prefix__Layer_31" data-name="Layer 31">
             <g id="prefix__SpaceShipBottom">
               <Path
                 className="prefix__cls-30"
@@ -338,7 +339,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(27)} fill={this.props.fillColors[27]} id="prefix__Layer_32" data-name="Layer 32">
+          <g onClick={() => props.onFill(27)} fill={props.fillColors[27]} id="prefix__Layer_32" data-name="Layer 32">
             <g id="prefix__spaceShip">
               <Path
                 className="prefix__cls-31"
@@ -346,14 +347,14 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(28)} fill={this.props.fillColors[28]} id="prefix__Layer_33" data-name="Layer 33">
+          <g onClick={() => props.onFill(28)} fill={props.fillColors[28]} id="prefix__Layer_33" data-name="Layer 33">
             <Path
               d="M2465.5 1712.32c-9.1 3.2-16.5 6.3-16.5 6.7s1.7 3.5 3.7 6.6c2.6 4 3.7 6.9 3.6 9.3-.1 4.5-4.1 12.5-13.3 26.5-30.5 46.2-63.2 75.3-109.5 97.6a159.86 159.86 0 01-40.2 13.8c-11.1 2.3-43.4 4.6-52.5 3.8l-5.6-.5-11.4 11.7c-38.3 39-64.7 82.7-80.9 133.8-1.2 4-2.5 7.1-2.7 6.9-.6-.7 8.6-30.2 12.5-40.1 7.5-18.9 22.5-46.2 34.7-63 6.8-9.3 20.6-25.6 32.7-38.7 5.4-5.8 9.9-10.9 9.9-11.2s-1.1-.6-2.4-.6c-3.2 0-21.1 18.6-32 33.3-25 33.7-41.8 65-55.2 103.2-6.1 17.4-6.9 17.8-1.8 1 13.4-44.3 42.9-94.6 74.7-127.2 10.2-10.5 10.7-11.2 8.8-12.3a4.42 4.42 0 00-3.2-.5c-1.6 1-3.5-1.2-5.4-6.3a30.88 30.88 0 00-2.5-5.5c-1.4-1.6-26.3 19.5-43 36.2-28.7 28.8-48 56.2-68.8 97.6-7.5 14.9-17.2 38.2-17.2 41.5 0 5.3 27.8 8.6 60.1 7 40.5-2.1 81.3-9.9 129.9-24.9 67.5-20.9 120-44.7 155.5-70.6 13.14-9.57 30.89-25.81 44.51-40.47v-197.06c-2.01.76-4.17 1.58-6.51 2.43zm-344 298.2c-2.4-.9-1.9-6.2.7-8 3.1-2.2 5.5-2 6.9.5 2.2 4.3-2.9 9.3-7.6 7.5zm61.1-5.3c-1.2 6.1-7.9 9.3-12.4 6-5-3.7-3.7-10.9 2.3-13.4 3.5-1.4 5.5-1 8.2 1.7 2 2 2.4 3.1 1.9 5.7zm67-11.8a6 6 0 01-9 .9c-2-1.9-2-3.4 0-6.2a5.42 5.42 0 019 .3c1.5 2.3 1.5 2.7 0 5zm60.2-15.5c-3 0-6.8-3.8-6.8-6.8a7.09 7.09 0 011.7-4.4c2-2.2 6.1-2.3 9.1-.2 4.4 3 1.5 11.4-4 11.4zm66.1-32.6c-3.9 5-10.9 2.4-10.9-4 0-2.3.7-3.8 2.2-4.8 3.2-2.2 5.5-2 8.3.9 3 2.9 3.1 4.5.4 7.9zm63.5-42.7c-1.3 3.9-5.8 5.1-9.3 2.6-3.2-2.4-3.8-5.6-1.6-8.9 3.6-5.5 13.1 0 10.9 6.3z"
               fill="#54b948"
               id="prefix__spaceSHipTop"
             />
           </g>
-          <g onClick={() => this.props.onFill(29)} fill={this.props.fillColors[29]} id="prefix__Layer_34" data-name="Layer 34">
+          <g onClick={() => props.onFill(29)} fill={props.fillColors[29]} id="prefix__Layer_34" data-name="Layer 34">
             <g id="prefix__jqHair-2" data-name="jqHair">
               <Path
                 className="prefix__cls-33"
@@ -377,7 +378,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(30)} fill={this.props.fillColors[30]} id="prefix__Layer_35" data-name="Layer 35">
+          <g onClick={() => props.onFill(30)} fill={props.fillColors[30]} id="prefix__Layer_35" data-name="Layer 35">
             <g id="prefix__jqSkin2">
               <Path
                 className="prefix__cls-29"
@@ -385,7 +386,7 @@ export default class FunnyLight extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(31)} fill={this.props.fillColors[31]} id="prefix__Layer_36" data-name="Layer 36">
+          <g onClick={() => props.onFill(31)} fill={props.fillColors[31]} id="prefix__Layer_36" data-name="Layer 36">
             <Path
               className="prefix__cls-34"
               d="M1835.7 1117.52c-.2.2-3.9-.5-8.3-1.7-20.6-5.3-45.5-.7-62.5 11.7l-4.7 3.4-.6-5.2c-.3-2.9-.7-9.6-.8-14.8-.2-8.5 0-9.9 2-12.7 5.5-7.8 18.8-16.8 30-20.4 7.7-2.4 19.3-2.4 26.4 0 7.4 2.5 13.4 6.5 15.2 9.8 1.2 2.6 4.2 29 3.3 29.9z"
@@ -395,13 +396,13 @@ export default class FunnyLight extends React.Component {
               d="M1848.5 1276.22c-.3-3.2-.8-7.7-1.1-10l-.5-4.2-6.7-2c-3.7-1.1-9.4-2.5-12.7-3.2-6.6-1.4-32.9-1.8-44-.7-8.6.8-5.1-.4 8-2.9 9.7-1.8 42.2-2.5 50.4-1l4.3.8-.7-12.8c-.4-7.7-1.2-13.1-1.9-13.6-1.7-1.1-10.2-3.5-19.1-5.5-11.2-2.4-39.2-2.3-48.9.1-9.5 2.4-9.5 1.4.1-1.6 22.4-7.1 50.9-9 64.1-4.3l4.3 1.6-.5-4.3c-.3-2.3-1.1-11-1.7-19.2s-1.2-15.1-1.4-15.3-5.6-1.6-12.1-3.3c-20.6-5.2-43.5-5-59.5.6-7.5 2.7-5.3.8 2.9-2.3 18.4-7.2 44.9-9.7 60.6-5.9 3.8 1 7.1 1.6 7.3 1.3s-.4-10.1-1.3-22.1l-1.8-21.7-4-1.8a105.64 105.64 0 00-10.6-3.3 76.11 76.11 0 00-37.9.7c-7.8 2.1-17.6 6.5-21.4 9.8l-2.8 2.3 1.5 24c.8 13.2 2.1 33.4 2.7 45s1.6 21.3 2.1 21.6.6.8.1 1c-.8.4.5 28.1 2.3 52.7.6 7.3.6 7.3 2.7 5.8 10.6-7.7 29.8-11.7 39.7-8.3 2.8 1 8 1.6 13.5 1.6 10.5 0 13.2.5 19.8 3.8l4.9 2.4zm-72.8-18.7a2 2 0 01-1.9.1c-.8-.3-.5-.6.6-.6s1.7.2 1.3.5z"
             />
           </g>
-          <g onClick={() => this.props.onFill(32)} fill={this.props.fillColors[32]} id="prefix__Layer_37" data-name="Layer 37">
+          <g onClick={() => props.onFill(32)} fill={props.fillColors[32]} id="prefix__Layer_37" data-name="Layer 37">
             <Path
               className="prefix__cls-35"
               d="M1708.5 741.72c.1-.2-.1-5.1-.5-10.9-.9-11.1-3.2-18-6.5-19.3-2.2-.8-2-.9-3.8 1.2-2.1 2.3-2.2 8.7-.3 13.4 1.4 3.3 10.6 16.2 11.1 15.6zM1936.7 1009.62c-.2.2-3.7-1.2-7.8-3.1-15.2-7-43.9-14.2-65.9-16.6-14-1.5-43-1.6-56-.1-15.3 1.8-39.1 5.8-50.3 8.6-5.4 1.4-10.1 2.5-10.4 2.5s3.2-2.5 7.8-5.6c10-6.7 32.26-24.57 36.46-29.17a10.63 10.63 0 001.09-1.25c4.28-1.91 8-3.73 9.45-4.58 3.8-2.4 11-9.6 14.1-14.1a130.08 130.08 0 0010.8-21.8c1.5-4.6 2.4-5.5 11.2-11.5 18.3-12.4 22.5-16.5 31.8-30.7 9.2-14 13.2-28.6 11.3-41-1.4-9.2-6.6-21.9-13.2-32.2-2.9-4.8-6.8-10.8-8.5-13.5l-3-4.8 2.9-2.4a19.09 19.09 0 013.5-2.4c.3 0 2.9 3.9 5.9 8.8 10.1 16.2 16.2 22.6 22.8 23.8 4.7.9 7.8-.2 12.3-4.2 5.5-4.9 7.9-9.2 9.4-16.5l1.3-6.3 1.6 8.5c2.1 10.7 4.3 30 5.7 50.4 1.8 27 9.9 110.7 13.1 135.4 1.6 12.9 2.8 23.6 2.6 23.8zM1707.9 1013.82c-16.8 6.1-38.9 19.1-50.4 29.7l-.32.28-.87.78-.39.35-.91.81c-.43.38-.9.79-1.38 1.23l-1.27 1.13-2.58 2.3-.64.57-.63.56-.6.54-.22.19-.89.8-.49.44-.44.4-.29.26-.61.55-.24.22c0-.59.09-1.87.13-3.88.1-3.6-1.5-24.59-2.3-31.69-2.8-25.3-6.1-91.2-8-160-.8-25.9.5-46.3 3.1-50.3 3.4-5.2 8.1-7.5 25.3-12.6a151.92 151.92 0 0017.2-6.1c6.2-3.2 6.5-3.1 4 .4-4 5.6-9 17.6-10.5 25.3-2.3 11-2 26.8.8 49 1.4 10.6 2.8 22.7 3.1 26.8.8 8.8-.7 26.6-3.6 43.5s-2.3 27.8 2.3 40.6c4.2 11.5 9 19 16.5 25.9 5.1 4.6 9.8 6.8 20.7 9.4.44.16-2.06 1.26-5.56 2.56z"
             />
           </g>
-          <g onClick={() => this.props.onFill(33)} fill={this.props.fillColors[33]} id="prefix__Layer_38" data-name="Layer 38">
+          <g onClick={() => props.onFill(33)} fill={props.fillColors[33]} id="prefix__Layer_38" data-name="Layer 38">
             <Path
               className="prefix__cls-36"
               d="M1953.5 1021.72c-.7-6.6-5.7-61-13-141.8-3-33.8-6.2-64.9-7.1-69-2.3-10.9-9.6-32.5-14.3-42.6-12.6-26.7-32.7-51-55.1-66.3-18.2-12.5-46.2-24-66.9-27.5-11.5-1.9-35-2-43.7-.1-29.8 6.5-65.4 25.8-88.1 47.8-13.8 13.4-19.6 20.6-27.9 34.3-9.7 16.3-17.3 40.1-19.6 61.9-1.1 11-.9 13.9 9.8 131.3l10.9 120.1 8-7.7a188.6 188.6 0 0130.2-24c12.1-7.9 33.4-18.7 44.2-22.3 22.6-7.7 59.2-16 71.3-16.2 3.7-.1 6.4-.4 5.9-.7-1.4-.8 18.5-1.5 41.9-1.4 40.7.2 68.5 6.7 103.3 24.1l10.9 5.4zm-258.3-311.5c4.2-4.5 9.9-2.5 13.1 4.5 1.7 3.8 2.2 7.2 2.5 18.4.4 12 .2 13.8-1.1 13.8-.9 0-2.8-1.7-4.3-3.8l-6.6-8.8c-7.1-9.5-8.5-18.9-3.6-24.1zM1939.3 1014c-.7.7-3.4 0-8.4-2.1-19.6-8.4-33.4-12.6-53.4-15.9-48.5-8.1-96.5-3.8-148.6 13.3-32.1 10.6-50.6 19.6-70.4 34.3l-.59.49-.32.26-.37.31-.42.34a2.11 2.11 0 01-.23.19l-.48.4-.74.61c-3.8 3.15-9.87 8.45-10.74 9.12a11.26 11.26 0 01-.29-2.25c-.2-2.5-2.5-27.49-3.8-40.69s-3-29.2-3.5-35.5c-1.2-14.2-3.9-112.2-4-143.5 0-21.2.2-23.2 2-26.3 2.5-4 9.2-8.4 17.9-11.6 3.6-1.3 11.1-4 16.6-6 12.2-4.5 17.7-7.7 28.6-17 19.9-16.8 42.2-26.7 63.7-28.3l8.3-.6-7.7-4.1c-17.6-9.4-25.1-21-19.4-30.3a16.26 16.26 0 0110.3-7.4c4.6-1.2 15.1-.1 21.5 2.1a117.2 117.2 0 0114.6 7.1c5 2.7 10.3 5.3 11.7 5.5 1.6.4 5.6-.6 10.5-2.5 11.1-4.3 16.9-4.2 26.3.5 15.6 7.8 17.3 12.4 9.1 24.7-5 7.5-6.1 11.5-3.7 13.5.6.6 4.1 1.8 7.6 2.7 11.1 2.8 18.1 7.7 18.1 12.6 0 2.9 1.7 3.1 3.5.2 2.9-4.4 9.7-11.4 12.6-12.9 6.4-3.3 14.3.2 20.2 8.8 4.3 6.4 5.5 9.5 10.1 26.3 5.6 20.5 6 24.1 13.1 108 1.4 16.5 4.6 49 7.1 72.3 3.18 28.84 4.38 42.64 3.68 43.32z"
@@ -411,7 +412,7 @@ export default class FunnyLight extends React.Component {
               d="M1955 1039.32v3.9l-2.2-2c-13.7-12.3-45.9-25.8-72.3-30.3-40.2-6.8-79-4.6-125.6 7-47.8 12-93.2 36.3-110.2 59-4.5 5.9-4.7 6-5.3 3.5-.9-3.4 2.6-8.3 13.1-18.4 25.4-24.4 54.2-39.8 94.9-51.1 27.4-7.5 35.2-9.2 46.1-9.9 16.8-1.2 49.7-1.2 62.5-.1 14.1 1.3 32.3 4.3 41 6.9 21.7 6.2 53.4 21 57.2 26.5a13.06 13.06 0 01.8 5z"
             />
           </g>
-          <g onClick={() => this.props.onFill(34)} fill={this.props.fillColors[34]} id="prefix__Layer_39" data-name="Layer 39">
+          <g onClick={() => props.onFill(34)} fill={props.fillColors[34]} id="prefix__Layer_39" data-name="Layer 39">
             <Path
               className="prefix__cls-37"
               d="M1858 772.92c-2.2 4.1-13.6 11.2-34.4 21.5-26.2 12.9-33.6 17.9-39.9 27.1-5.8 8.8-7.7 13.2-7.7 18.7 0 9.3 4.2 16.9 18.5 33.3 12.3 14.2 14 17.5 14 27.9-.1 10.8-5.5 26.6-12.8 36.9-1.2 1.6-1.6 2.7-1.1 2.3 1.8-1 10.3-14.3 12.6-19.4 3.1-7.1 4.8-14.1 4.8-20.4 0-7.8-3.8-14.7-15.8-29-11.6-13.9-15.4-20.9-16-29.5-.2-3.4.1-7 .7-8 .9-1.6 1-1.3 1.1 2.1.1 6.6 3.3 11.8 14.2 23.2 16.9 17.6 20 22.6 21.9 34.2 2.7 17.9-6.9 45.9-20.3 58.7-6.4 6.1-16.5 11.4-23.3 12.1-9.8 1.2-20.7-5.2-25.6-14.8-6.6-13.2-7.1-17.4-7-56.9.2-41.5 1.2-51.5 6.4-62.5 6.6-13.8 17-23.5 39.7-37.1 12.6-7.6 17.7-12.2 20.9-18.9 2.6-5.6 2.6-8.5.1-13.4-3.3-6.5-10.4-11.5-27-19.2-18.1-8.4-28.1-14.7-31.5-19.7-8.3-12.2 6.2-19.5 23.2-11.8a126 126 0 0113.4 7.7c12 7.8 14.6 8 29.6 2.3 8.4-3.1 11.1-2.7 18.9 2.7 8.2 5.7 8.1 5.4 4.6 9.4-7.2 8.2-9.4 17.4-5.9 24.2 2.1 4 8.5 7.8 15.8 9.3 6.8 1.3 9.6 3.8 7.9 7z"
@@ -449,7 +450,7 @@ export default class FunnyLight extends React.Component {
             id="prefix__Layer_43"
             data-name="Layer 43"
           />
-          <g onClick={() => this.props.onFill(35)} fill={this.props.fillColors[35]} id="prefix__New_Layer" data-name="New Layer">
+          <g onClick={() => props.onFill(35)} fill={props.fillColors[35]} id="prefix__New_Layer" data-name="New Layer">
             <Path d="M1842.59 1784.82l-.09.48c.02-.16.05-.3.09-.48z" fill="#fff" />
             <Path
               className="prefix__cls-31"
@@ -484,9 +485,11 @@ export default class FunnyLight extends React.Component {
           </g>
         </svg>
 
-        <ColorPalette currentColor={this.props.currentColor} changeColor={this.props.changeColor} />
+        <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
         <iframe src="https://audiomack.com/embed/playlist/jaquell/fitl-03?background=1" scrolling="no" width="100%" height="400" scrollbars="no" frameborder="0"></iframe>
       </div>
     )
-  }
+  
 }
+
+export default FunnyLight;

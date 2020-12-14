@@ -5,10 +5,6 @@ import { useHistory } from "react-router-dom";
 
 
 
-
-
-
-
 const ACAB = (props) => {
 
   const history = useHistory();
@@ -21,8 +17,13 @@ const ACAB = (props) => {
 
 
     return (
-      <div>
-        <button type="button" width={200} height={200} onClick={() => history.push('/')}/>
+      <div className="coloring-page">
+        <div className="coloring-image-container" >
+      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
+      </div >
+
+        <div className="coloring-image-container" >
         <svg viewBox="0 0 432.33 567.37" >
           <style >
             {
@@ -388,9 +389,11 @@ const ACAB = (props) => {
             <Path d="M329.05 69.17h-.35a3.6 3.6 0 01-3.48-1.74 14.8 14.8 0 00-1.06-1.31 8.38 8.38 0 00-1.26 1.11 6.62 6.62 0 01-3.9 1.84c-1.51.16-1.67.62-1.07 2.07.8 2 1.52 3.87 2.3 5.87a9.48 9.48 0 001 2.14 4.53 4.53 0 004 1.95c1.63-.09 2.41-1.42 2.94-2.78a25.1 25.1 0 00.77-2.79 42.83 42.83 0 011.33-4.53c.64-1.66.56-1.83-1.22-1.83zm.15 2.83c-.53 1.81-1.07 3.61-1.67 5.4a3.51 3.51 0 01-3.37 2.63 3.31 3.31 0 01-2.5-1.34 7.33 7.33 0 01-.9-1.65c-.68-1.94-1.29-3.9-1.94-5.85-.22-.68-.26-1.34.6-1.46a8.66 8.66 0 003.5-1.7c1.18-.76 1.33-.73 2.26.36a4.66 4.66 0 002.82 1.76c1.42.25 1.58.57 1.2 1.85z" />
           </g>
         </svg>
-        <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
-        <iframe src="https://audiomack.com/embed/playlist/jaquell/acab-04?background=1" scrolling="no" width="100%" height="400" scrollbars="no" frameborder="0"></iframe>
-
+        <button type="button"  className={"download-button"} >Download Portal</button>
+        </div>
+        <div >
+        <iframe src="https://audiomack.com/embed/playlist/jaquell/acab-04?background=1" scrolling="no" scrollbars="no" frameborder="0" height={"100%"}></iframe>
+        </div>
 
       </div>
     )

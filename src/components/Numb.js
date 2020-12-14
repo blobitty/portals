@@ -1,22 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Path from './Path'
 import ColorPalette from './ColorPalette'
+import { useHistory } from "react-router-dom";
 
-export default class Numb extends React.Component {
+const Numb = (props) =>  {
 
-  setFillPaths() {
-    this.props.fillSize(33);
-  }
+  const history = useHistory();
 
-  componentDidMount() {
-    this.setFillPaths();
+  
+  useEffect(() => {
+    // Update the document title using the browser API
+    props.fillSize(10);
+  });
 
-  }
-
-
-  render() {
     return (
       <div>
+        <button type="button" width={200} height={200} onClick={() => history.push('/')}/>
         <svg viewBox="0 0 2475 3300">
           <defs>
             <style>
@@ -25,7 +24,7 @@ export default class Numb extends React.Component {
               }
             </style>
           </defs>
-          <g onClick={() => this.props.onFill(0)} fill={this.props.fillColors[0]} id="prefix__Layer_1" data-name="Layer 1">
+          <g onClick={() => props.onFill(0)} fill={props.fillColors[0]} id="prefix__Layer_1" data-name="Layer 1">
             <g data-name="Layer 1">
               <Path
                 d="M559.4 2271.7c3 .6 5.7 1.1 7.4 1.4h.1c-1.6-.3-4.4-.8-7.5-1.4z"
@@ -59,7 +58,7 @@ export default class Numb extends React.Component {
               <Path d="M585.8 895.7a2 2 0 001.9-.1c.4-.3-.2-.6-1.3-.5s-1.4.3-.6.6zM455.6 929.5a8.14 8.14 0 01-3 1.5c-.6-.1 0-.7 1.4-1.5 3.2-1.9 4-1.8 1.6 0zM253.3 1025.5c-1-.3-4.5-3-7.8-6-5.9-5.4-8.2-6.7-7.2-4.3.3 1-1.2 1.3-5.7 1.2-5-.1-7.5-.8-14.1-4.2-4.4-2.2-8.4-3.8-8.9-3.5s.2 1.1 1.4 1.8l2.3 1.2-2.7.7c-5.1 1.3-12.1-3.7-17.2-12.3-1.8-3-3.4-4.1-3.4-2.2 0 .5 2 3.6 4.5 7l4.5 6-3.2-.6c-2.2-.4-2.9-.3-2.4.5 1.2 2 8.9 3.5 16.8 3.3 5.8-.1 8.5.3 11 1.6l3.3 1.8-2.7.3c-1.6.2-2.8.8-2.8 1.3s2.3.6 5.8.2c8.5-1.2 15.8-.8 18 .8 1 .8 3.8 2.9 6.2 4.6s4.7 3.3 5.2 3.3c1.5 0 .8-1.9-.9-2.5zM681.7 2401.6c.3 1-5.7 3.7-6.5 2.9-.3-.2.1-1.8.8-3.5 1.2-2.8 1.4-3 3.3-1.7a7.51 7.51 0 012.4 2.3zM1952.8 2585.7a2 2 0 001.9-.1c.4-.3-.2-.6-1.3-.5s-1.4.3-.6.6zM1982.3 2667.7c.6-.3.1-.5-1.3-.5s-1.9.2-1.2.5a5.28 5.28 0 002.5 0z" />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(1)} fill={this.props.fillColors[1]} id="prefix__Layer_2" data-name="Layer 2">
+          <g onClick={() => props.onFill(1)} fill={props.fillColors[1]} id="prefix__Layer_2" data-name="Layer 2">
             <g id="prefix__BootStraps">
               <Path
                 className="prefix__cls-5"
@@ -67,7 +66,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(2)} fill={this.props.fillColors[2]} id="prefix__Layer_3" data-name="Layer 3">
+          <g onClick={() => props.onFill(2)} fill={props.fillColors[2]} id="prefix__Layer_3" data-name="Layer 3">
             <g id="prefix__JQShoelaces">
               <Path
                 className="prefix__cls-6"
@@ -79,7 +78,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(3)} fill={this.props.fillColors[3]} id="prefix__Layer_4" data-name="Layer 4">
+          <g onClick={() => props.onFill(3)} fill={props.fillColors[3]} id="prefix__Layer_4" data-name="Layer 4">
             <g id="prefix__JQShoe1">
               <Path
                 className="prefix__cls-7"
@@ -91,7 +90,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(4)} fill={this.props.fillColors[4]} id="prefix__Layer_5" data-name="Layer 5">
+          <g onClick={() => props.onFill(4)} fill={props.fillColors[4]} id="prefix__Layer_5" data-name="Layer 5">
             <g id="prefix__JQShoe2">
               <Path
                 className="prefix__cls-8"
@@ -103,7 +102,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(5)} fill={this.props.fillColors[5]} id="prefix__Layer_6" data-name="Layer 6">
+          <g onClick={() => props.onFill(5)} fill={props.fillColors[5]} id="prefix__Layer_6" data-name="Layer 6">
             <g id="prefix__JQShoe">
               <Path
                 className="prefix__cls-9"
@@ -115,7 +114,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(6)} fill={this.props.fillColors[6]} id="prefix__Layer_7" data-name="Layer 7">
+          <g onClick={() => props.onFill(6)} fill={props.fillColors[6]} id="prefix__Layer_7" data-name="Layer 7">
             <g id="prefix__JQSocks">
               <Path
                 className="prefix__cls-10"
@@ -123,28 +122,28 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(7)} fill={this.props.fillColors[7]} id="prefix__Layer_8" data-name="Layer 8">
+          <g onClick={() => props.onFill(7)} fill={props.fillColors[7]} id="prefix__Layer_8" data-name="Layer 8">
             <Path
               d="M1647.7 2474c.6 0 1.5-1.5 1.9-3.2 2.2-10.4 14.1-15.5 19.8-8.7 3.7 4.4 3.3 8.2-1.7 13.6l-2 2.3h3.9c3.7-.1 4.2-.5 8.9-7 2.8-3.9 5.3-7 5.7-7a30.56 30.56 0 015.4 2.5 21.11 21.11 0 009 2.5c8.7 0 21.3-7.1 24.9-14.1 2.3-4.4 1.9-10.3-1-13.7-2.5-2.9-8.5-5.2-13.9-5.2-1.4 0-2.6-.4-2.6-.8s2-3.5 4.5-6.6 4.5-6.2 4.5-6.7c0-1.1-1.8-1.1-9.9.1-3.6.5-6.8.7-7.3.4s.9-2.6 3.1-5c8.6-9.8 7-22.8-3.2-27.5-8.5-3.8-21.8-1.6-29.9 5.1a32.08 32.08 0 00-6.4 8.5c-3.4 7.2-3 12.7 1.5 18.3 1.7 2.2 3.1 4.5 3.1 5.1s-2.1 1.1-5.2 1.2a94 94 0 00-9.7.7c-4.1.7-4.4 1-6.2 5.7-2.4 6.2-2.4 6.8 0 5.5 3.2-1.6 7.6-1.2 9.6 1 2.6 2.8 2.4 7.8-.5 12.4-2.9 4.9-7.3 6.8-12.5 5.6-2.1-.5-4.2-.7-4.6-.4-1 .6-3.2 11.4-2.6 12s11.5 3.3 13.4 3.4z"
               fill="#cd2027"
               id="prefix__SuitEmbled"
             />
           </g>
-          <g onClick={() => this.props.onFill(8)} fill={this.props.fillColors[8]} id="prefix__Layer_9" data-name="Layer 9">
+          <g onClick={() => props.onFill(8)} fill={props.fillColors[8]} id="prefix__Layer_9" data-name="Layer 9">
             <Path
               d="M1638 2521.5a36 36 0 001.9 6.7c.3.4 6-3.4 12.6-8.4 34.8-26.2 54.7-39.3 83-54.8 9.4-5.1 18.2-10.1 19.7-11.2l2.7-1.9-2-5.2c-7.9-20.2-24.3-54.5-35-73.5a89.66 89.66 0 01-5.8-11.9c-.9-2.6-2.1-4.8-2.6-4.9-3.3-.8-47.9 28.3-69.8 45.5-7.1 5.5-19.5 14.7-27.5 20.5s-15.4 11.1-16.2 12.1c-1.2 1.5-1.1 2.3 1.3 6.3 1.5 2.6 5.3 9.6 8.3 15.7s9 16.9 13.1 24.2c7.5 13.2 13.9 29.2 16.3 40.8zm-4.8-57.7l2.4-7.3 6.7.3c6.2.4 6.8.2 9.2-2.4 3.2-3.5 3.6-10.7.6-12.4a11.19 11.19 0 00-9.3.1c-1.1.6-2.1.9-2.3.7-.5-.5 4.5-12.2 5.9-13.6.6-.6 4.9-1.8 9.4-2.4s8.2-1.5 8.2-1.9-.7-1.2-1.6-2c-6.2-5.2-5.7-17.7 1.2-25.7 3.7-4.4 11.5-8.9 17.6-10.2s13.9-.5 18.4 1.8c9.7 4.9 11.3 20.2 3.1 29.1l-2.2 2.4 7.6-.6c4.2-.3 8.2-.2 8.9.3 1.4.9 1.2 1.3-4.2 8.7a42.15 42.15 0 00-3.8 5.8c0 .3 1.6.5 3.5.5 4.6 0 10.7 3.1 13 6.7 2.8 4.2 2.4 11.4-.9 16.1s-7.6 7.6-15.1 10.2c-8 2.8-14.8 2.9-20.7.3l-4.6-2.1-5.1 6.4c-5 6.1-5.3 6.4-9.6 6.4-2.5 0-4.5-.2-4.5-.5a14.16 14.16 0 012.1-3.4c3-4 3.7-10.6 1.4-13.1-5.2-5.7-17.5 1.9-17.5 10.7 0 2.6-.4 3.3-1.9 3.3-3.3 0-16.5-3-17.5-4-.5-.5.1-3.8 1.6-8.2z"
               fill="#199045"
               id="prefix__SuitEOutline"
             />
           </g>
-          <g onClick={() => this.props.onFill(9)} fill={this.props.fillColors[9]} id="prefix__Layer_10" data-name="Layer 10">
+          <g onClick={() => props.onFill(9)} fill={props.fillColors[9]} id="prefix__Layer_10" data-name="Layer 10">
             <Path
               className="prefix__cls-13"
               d="M1657.8 2210.5c-.7.8-27.1 3.5-33.3 3.5-2.7 0-5.5-.4-6.2-.8-1.8-1.1-4.4-14.5-4.4-22.5 0-6.5.2-7.1 4.2-12.5 3.6-4.7 24.6-27.2 25.5-27.2a48.06 48.06 0 012.3 6.3 112.37 112.37 0 013.6 16.3c.8 5.4 2.7 14.7 4.2 20.7s2.3 11.1 1.9 11.5-7.5.7-15.7.7c-13 0-14.6.2-11.9 1.3 5.5 2.2 17 3.4 23.5 2.4 5.7-.9 7.5-.8 6.3.3z"
               id="prefix__Suit4"
             />
           </g>
-          <g onClick={() => this.props.onFill(10)} fill={this.props.fillColors[10]} id="prefix__Layer_11" data-name="Layer 11">
+          <g onClick={() => props.onFill(10)} fill={props.fillColors[10]} id="prefix__Layer_11" data-name="Layer 11">
             <g id="prefix__SuitPants2">
               <Path
                 className="prefix__cls-14"
@@ -152,7 +151,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(11)} fill={this.props.fillColors[11]} id="prefix__Layer_12" data-name="Layer 12">
+          <g onClick={() => props.onFill(11)} fill={props.fillColors[11]} id="prefix__Layer_12" data-name="Layer 12">
             <g id="prefix__Glasses">
               <Path
                 className="prefix__cls-15"
@@ -160,7 +159,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(12)} fill={this.props.fillColors[12]} id="prefix__Layer_13" data-name="Layer 13">
+          <g onClick={() => props.onFill(12)} fill={props.fillColors[12]} id="prefix__Layer_13" data-name="Layer 13">
             <g id="prefix__JQShirt">
               <Path
                 className="prefix__cls-16"
@@ -180,7 +179,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(13)} fill={this.props.fillColors[13]} id="prefix__Layer_14" data-name="Layer 14">
+          <g onClick={() => props.onFill(13)} fill={props.fillColors[13]} id="prefix__Layer_14" data-name="Layer 14">
             <g id="prefix__JQSkin">
               <Path
                 className="prefix__cls-17"
@@ -208,14 +207,14 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(14)} fill={this.props.fillColors[14]} id="prefix__Layer_15" data-name="Layer 15">
+          <g onClick={() => props.onFill(14)} fill={props.fillColors[14]} id="prefix__Layer_15" data-name="Layer 15">
             <Path
               className="prefix__cls-18"
               d="M2090 2171.2c-28.4 20-106.3 59.8-124.1 63.4-10.3 2.1-14.1 1.1-25.8-6.6-40.1-26.4-78-70.6-102.6-119.9-18-36.1-24.4-64.9-23.2-104 .7-25.5 4.7-44.5 14.1-67.9 13.4-33.4 28.7-55.8 42.4-62.3 7.9-3.8 25.2-14.3 34.1-20.7 9.5-6.9 55.3-37.8 55.8-37.8a16 16 0 01-.7 3.7c-.5 1.9-1.6 8.1-2.4 13.9a236 236 0 0021 135.9c12.5 26 28.3 47.2 62.6 84.3 46.7 50.4 62.2 69.5 67.7 83.6 5.2 13.1 1.2 20.3-18.9 34.4z"
               id="prefix__HelmetGlass"
             />
           </g>
-          <g onClick={() => this.props.onFill(15)} fill={this.props.fillColors[15]} id="prefix__Layer_16" data-name="Layer 16">
+          <g onClick={() => props.onFill(15)} fill={props.fillColors[15]} id="prefix__Layer_16" data-name="Layer 16">
             <g id="prefix__HelmetTwo">
               <Path
                 className="prefix__cls-13"
@@ -223,7 +222,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(16)} fill={this.props.fillColors[16]} id="prefix__Layer_17" data-name="Layer 17">
+          <g onClick={() => props.onFill(16)} fill={props.fillColors[16]} id="prefix__Layer_17" data-name="Layer 17">
             <g id="prefix__suitGloves">
               <Path
                 className="prefix__cls-19"
@@ -235,7 +234,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(17)} fill={this.props.fillColors[17]} id="prefix__Layer_18" data-name="Layer 18">
+          <g onClick={() => props.onFill(17)} fill={props.fillColors[17]} id="prefix__Layer_18" data-name="Layer 18">
             <g id="prefix__PortalBalls">
               <Path
                 className="prefix__cls-20"
@@ -243,7 +242,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(18)} fill={this.props.fillColors[18]} id="prefix__Layer_19" data-name="Layer 19">
+          <g onClick={() => props.onFill(18)} fill={props.fillColors[18]} id="prefix__Layer_19" data-name="Layer 19">
             <g id="prefix__Suit1">
               <Path
                 className="prefix__cls-21"
@@ -251,14 +250,14 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(19)} fill={this.props.fillColors[19]} id="prefix__Layer_20" data-name="Layer 20">
+          <g onClick={() => props.onFill(19)} fill={props.fillColors[19]} id="prefix__Layer_20" data-name="Layer 20">
             <Path
               className="prefix__cls-18"
               d="M2140.7 2218c-2.5-1.6-5-2-11.2-1.9-24.5.1-57 18.9-72.4 41.7-8 11.9-9.3 20.6-4 28.5a37.71 37.71 0 003.9 5.2c.5.3 1.3-1.7 1.9-4.5 2.4-11.1 11.9-25.4 23.7-35.4 8.8-7.5 15.5-11.6 27.3-16.7 13.6-5.8 15.7-5.7 5 .3-13.9 7.8-22.3 14.1-31.9 24-15.9 16.3-22.5 32.3-16.6 40.4 1.3 1.7 2.7 1.9 12.8 1.9 13.3-.1 21.7-2.2 31.6-8.2 14.5-8.8 30.8-29.4 37.2-47 4.2-11.6 1.2-23.2-7.3-28.3zm-48.9 71.2a3 3 0 01-2.2 2.6 2.52 2.52 0 01-2.9-3.5c.3-.7 1.6-1.3 3-1.3 2 0 2.4.4 2.1 2.2zm.2-8.7a4.37 4.37 0 01-2.7 1.5c-1.7 0-2.7-2.4-1.9-4.5a2.39 2.39 0 011.9-1.5 4.37 4.37 0 012.7 1.5c1 1.2 1 1.8 0 3zm3.4-17.5c-1.9 0-2.4-.5-2.4-2.5s.5-2.5 2.4-2.5a3.59 3.59 0 012.9 1.2c.7 2.3-.4 3.8-2.9 3.8zm4 24.5c-1-1.4-1.1-2.2-.2-3.2 1.6-2 4.2-1.2 4.6 1.5.4 3-2.6 4.2-4.4 1.7zm5.4-12.7c-2.6-.3-3.7-3.6-1.6-4.9 1.8-1.2 2.4-1.1 3.8.6 1.8 2.1.5 4.7-2.2 4.3zm.6-16a3.63 3.63 0 01-1.1-3.2 3.11 3.11 0 012.7-1.6c2.7 0 3.7 2.7 1.6 4.8-1.5 1.5-1.7 1.5-3.2 0zm4.9 26.9a3 3 0 01-.7-3.1c.9-2.4 4.8-1.7 5.2 1a2.57 2.57 0 01-4.5 2.1zm5.3-12.9c-2.4-.3-3.4-3.7-1.4-4.9 1.8-1.2 2.4-1.1 3.7.5a2.61 2.61 0 01-2.3 4.4zm11-13c-1.5 1.5-1.7 1.5-3.2 0a3.63 3.63 0 01-1.1-3.2 3.11 3.11 0 012.7-1.6c2.7 0 3.7 2.7 1.6 4.8z"
               id="prefix__HelmetEarPiece"
             />
           </g>
-          <g onClick={() => this.props.onFill(20)} fill={this.props.fillColors[20]} id="prefix__Layer_21" data-name="Layer 21">
+          <g onClick={() => props.onFill(20)} fill={props.fillColors[20]} id="prefix__Layer_21" data-name="Layer 21">
             <g id="prefix__HelmetThree">
               <Path
                 className="prefix__cls-22"
@@ -270,7 +269,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(21)} fill={this.props.fillColors[21]} id="prefix__Layer_22" data-name="Layer 22">
+          <g onClick={() => props.onFill(21)} fill={props.fillColors[21]} id="prefix__Layer_22" data-name="Layer 22">
             <g id="prefix__HelmetOne">
               <Path
                 className="prefix__cls-23"
@@ -278,7 +277,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(22)} fill={this.props.fillColors[22]} id="prefix__Layer_23" data-name="Layer 23">
+          <g onClick={() => props.onFill(22)} fill={props.fillColors[22]} id="prefix__Layer_23" data-name="Layer 23">
             <g id="prefix__JQPants">
               <Path
                 className="prefix__cls-24"
@@ -302,7 +301,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(23)} fill={this.props.fillColors[23]} id="prefix__Layer_24" data-name="Layer 24">
+          <g onClick={() => props.onFill(23)} fill={props.fillColors[23]} id="prefix__Layer_24" data-name="Layer 24">
             <g id="prefix__JQPants1">
               <Path
                 className="prefix__cls-25"
@@ -310,7 +309,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(24)} fill={this.props.fillColors[24]} id="prefix__Layer_25" data-name="Layer 25">
+          <g onClick={() => props.onFill(24)} fill={props.fillColors[24]} id="prefix__Layer_25" data-name="Layer 25">
             <g id="prefix__JQHair">
               <Path
                 className="prefix__cls-26"
@@ -330,7 +329,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(25)} fill={this.props.fillColors[25]} id="prefix__Layer_26" data-name="Layer 26">
+          <g onClick={() => props.onFill(25)} fill={props.fillColors[25]} id="prefix__Layer_26" data-name="Layer 26">
             <Path
               className="prefix__cls-27"
               d="M563 2280.5a134.79 134.79 0 00-9 14.6l-4.2 8.1-6.1-.7c-23.3-2.5-57.2-13.8-84.2-27.9-12.2-6.4-30.9-17.5-30.3-18.1.2-.2 3.2.3 6.7 1.1s6.5 1.3 6.7 1.1c.5-.4-20.1-6.4-24.6-7.1-1.9-.3-9.3-1.6-16.5-2.8-11.2-1.9-16.7-2.2-40-2.2-30 0-38.3.8-64 6.1-23.2 4.8-32.4 3.8-35.5-3.7-3.7-8.8 5.8-20.4 23.4-28.5 13.9-6.5 31.6-9.6 67.6-12 24-1.6 30.2-2.7 22-3.8-4.8-.6-5.4-1.3-16.1-17.2-13.7-20.5-25.3-46.3-32.4-72.2-7.7-28.1-9.5-41.4-10.2-75.4-.6-29.6.3-45 3.9-67.8l2.1-13.5 5.1 5.9c2.8 3.3 8.5 9.7 12.6 14.3l7.5 8.4-1.3 10.6c-1.6 13.2-1.7 49.9-.2 64.7 4.3 42.7 22.8 88.4 48.7 120.5 7.9 9.8 28.5 29.7 39.6 38.4 17.8 13.8 47.4 30.7 68.7 39.1a206.5 206.5 0 0042.7 10.9c.3 0 .6.1.9.1s.4.1.6.1c1 .1 2.1.3 3.3.4.5.1 1 .1 1.5.2h.2c.3 0 .6.1 1 .1.6.1 1.3.1 1.9.2 4.2.5 8.3.9 11.1 1.1 1.3.4.8 1.7-3.2 6.9z"
@@ -356,7 +355,7 @@ export default class Numb extends React.Component {
               d="M379.3 1627.4a42.6 42.6 0 01-6-.5c-7.8-1-24.7-1-30.5 0l-4.8.8v-12.1c0-12.3-1.2-22.4-4.9-44.6s-7.7-34.4-17.6-55.5c-7.4-15.7-9.5-21.9-9.5-28.1s1.2-9.1 4.3-10.4c3.4-1.4 4.8-1.2 10.2 1.4 5.9 2.7 15.5 12.4 21.5 21.7 13.2 20.2 26.9 57.9 33.5 92 2.1 11.2 4.7 34.4 3.8 35.3zM728.2 2375.5c-.8.3-2.5-.4-3.8-1.6-1.5-1.4-4.1-2.4-7.4-2.7-4.2-.4-6.1.1-11.4 2.7-3.5 1.7-7.2 3.1-8.2 3.1-4.7 0-9.7 2.5-14.9 7.1l-5.5 5.1-5.8-4.8c-13.5-11.5-31.1-31.4-45-51.2-11.7-16.5-11.1-14-5.1-21.3 5.8-7.1 16-17.9 16.9-17.9.4 0 4.4 5.1 9 11.2 19.9 26.6 48.7 51.8 74.5 65.3 5.5 2.9 7.8 4.6 6.7 5zM364.3 1924.7l-1.8 8.2-3.2-3.8c-9-10.8-20.3-26.6-19.9-27.8.3-.8 1.7-7 3.1-13.9 3.6-18.2 5.6-24.4 9.3-28.7 2-2.3 3.7-2.2 6.3.5 3.1 3.3 6.7 11.6 8 18.4 1.6 8.3.5 36.7-1.8 47.1zM2165.4 1348.2a431.8 431.8 0 00-30.6-35.9c-7.5-8-7.8-8.4-7.8-13.1 0-2.7-.7-11.6-1.5-19.8-6.2-59.3-21.8-103.3-50.3-141.8-20.4-27.5-36.1-42.6-77.3-74.3-18-13.9-23-21.2-17.9-26.3 2.6-2.6 7-2.6 17.2 0 40.3 10.3 82.4 45.8 114.4 96.3 23.9 37.7 42 82.2 47.8 117.7 3 18.4 5.6 54.8 5.6 79 0 3.5.1 11.9.4 18.2z"
             />
           </g>
-          <g onClick={() => this.props.onFill(26)} fill={this.props.fillColors[26]} id="prefix__Layer_27" data-name="Layer 27">
+          <g onClick={() => props.onFill(26)} fill={props.fillColors[26]} id="prefix__Layer_27" data-name="Layer 27">
             <g id="prefix__Boot1">
               <Path
                 className="prefix__cls-5"
@@ -376,7 +375,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(27)} fill={this.props.fillColors[27]} id="prefix__Layer_28" data-name="Layer 28">
+          <g onClick={() => props.onFill(27)} fill={props.fillColors[27]} id="prefix__Layer_28" data-name="Layer 28">
             <g id="prefix__Boot3">
               <Path
                 className="prefix__cls-28"
@@ -384,7 +383,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(28)} fill={this.props.fillColors[28]} id="prefix__Layer_29" data-name="Layer 29">
+          <g onClick={() => props.onFill(28)} fill={props.fillColors[28]} id="prefix__Layer_29" data-name="Layer 29">
             <g id="prefix__Boot2">
               <Path
                 className="prefix__cls-29"
@@ -396,7 +395,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(29)} fill={this.props.fillColors[29]} id="prefix__Layer_30" data-name="Layer 30">
+          <g onClick={() => props.onFill(29)} fill={props.fillColors[29]} id="prefix__Layer_30" data-name="Layer 30">
             <g id="prefix__SuitPants1">
               <Path
                 className="prefix__cls-30"
@@ -408,7 +407,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(30)} fill={this.props.fillColors[30]} id="prefix__Layer_31" data-name="Layer 31">
+          <g onClick={() => props.onFill(30)} fill={props.fillColors[30]} id="prefix__Layer_31" data-name="Layer 31">
             <g id="prefix__Suit2">
               <Path
                 className="prefix__cls-31"
@@ -424,7 +423,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(31)} fill={this.props.fillColors[31]} id="prefix__Layer_32" data-name="Layer 32">
+          <g onClick={() => props.onFill(31)} fill={props.fillColors[31]} id="prefix__Layer_32" data-name="Layer 32">
             <g id="prefix__Suit5">
               <Path
                 className="prefix__cls-32"
@@ -436,7 +435,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(32)} fill={this.props.fillColors[32]} id="prefix__Layer_33" data-name="Layer 33">
+          <g onClick={() => props.onFill(32)} fill={props.fillColors[32]} id="prefix__Layer_33" data-name="Layer 33">
             <g id="prefix__Bkgd">
               <Path
                 className="prefix__cls-33"
@@ -448,7 +447,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(33)} fill={this.props.fillColors[33]} id="prefix__Layer_34" data-name="Layer 34">
+          <g onClick={() => props.onFill(33)} fill={props.fillColors[33]} id="prefix__Layer_34" data-name="Layer 34">
             <g id="prefix__SpaceCord">
               <Path
                 className="prefix__cls-34"
@@ -460,7 +459,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(34)} fill={this.props.fillColors[34]} id="prefix__Layer_35" data-name="Layer 35">
+          <g onClick={() => props.onFill(34)} fill={props.fillColors[34]} id="prefix__Layer_35" data-name="Layer 35">
             <g oid="prefix__Pads">
               <Path
                 className="prefix__cls-35"
@@ -484,7 +483,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(35)} fill={this.props.fillColors[35]} id="prefix__Layer_36" data-name="Layer 36">
+          <g onClick={() => props.onFill(35)} fill={props.fillColors[35]} id="prefix__Layer_36" data-name="Layer 36">
             <g id="prefix__Suit3">
               <Path
                 className="prefix__cls-36"
@@ -500,7 +499,7 @@ export default class Numb extends React.Component {
               />
             </g>
           </g>
-          <g onClick={() => this.props.onFill(36)} fill={this.props.fillColors[36]} id="prefix__Layer_37" data-name="Layer 37">
+          <g onClick={() => props.onFill(36)} fill={props.fillColors[36]} id="prefix__Layer_37" data-name="Layer 37">
             <g id="prefix__PortalBKG">
               <Path
                 className="prefix__cls-37"
@@ -513,9 +512,11 @@ export default class Numb extends React.Component {
             </g>
           </g>
         </svg>
-        <ColorPalette currentColor={this.props.currentColor} changeColor={this.props.changeColor} />
+        <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
         <iframe src="https://audiomack.com/embed/playlist/jaquell/numb-10?background=1" scrolling="no" width="100%" height="400" scrollbars="no" frameborder="0"></iframe>
       </div>
     )
-  }
+  
 }
+
+export default Numb;
