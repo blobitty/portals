@@ -26,7 +26,10 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <Title>Enter the Portal Coloring Book 🎨 </Title>
+            <div>
+            <Title>Enter the Portal: Coloring Book </Title>
+            </div>
+            <img src="https://i.imgur.com/kDDFvUp.png" class="rotate" width="100" height="100" />
 
             <div id="image-gallery" style={galleryStyle}>
                 
@@ -50,6 +53,7 @@ const Home = () => {
                     <img className="songImage" src={acab} height="250px"/>
                     <button onClick={() => history.push('/acab')}>Color The Portal </button>
                 </div>
+
                 <div className="image-card" style={imageCardStyle}>
                     <h4 className="image-header">Seeing Signs</h4>
                     <img className="songImage" src={seeingSigns} height="250px"/>
@@ -70,6 +74,7 @@ const Home = () => {
                     <img className="songImage" src={spaceship} height="250px"/>
                     <button onClick={() => history.push('/spaceships')}>Color The Portal </button>
                 </div>
+
                 <div className="image-card" style={imageCardStyle}>
                     <h4 className="image-header">Diamond In The Dark</h4>
                     <img className="songImage" src={dITD} height="250px"/>
@@ -90,10 +95,12 @@ const Title = styled.h1`
   text-align: center;
   color: #8FBC8F;
   padding: 16px;
-  font-family: "Marker Felt";
+  font-family: "Comic Sans MS";
   margin-top: 0px;
   font-style: normal;
-  font-size: 15vmin;
+  opacity: 0.9;
+  font-size: 10vmin;
+  background-color: #FFFAFA;
 `;
 
 const HomeContainer = styled.div`

@@ -4,6 +4,13 @@
 
 }
 
+.AppTwo {
+  text-align: center;
+  background-color: #769273;
+  margin:0px;
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -12,6 +19,19 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
 
@@ -105,7 +125,7 @@
   height: 40px;
   width: 50%;
   align-self: start;
-  background-color: rgb(91, 114, 88);
+  background-color: #5b7258;
   color: white;
   font-size: 20px;
   padding: 10px;
