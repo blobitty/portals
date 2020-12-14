@@ -18,13 +18,13 @@ const ACAB = (props) => {
 
     return (
       <div className="coloring-page">
-        <div className="coloring-image-container" >
+        <div className="palette-container" >
       <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
       <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
       </div >
 
         <div className="coloring-image-container" >
-        <svg viewBox="0 0 432.33 567.37" >
+        <svg className="svg-image" viewBox="0 0 432.33 567.37" >
           <style >
             {
               ".prefix__cls-1{fill:#e66f25}.prefix__cls-2{fill:#0876bd}.prefix__cls-3{fill:#ed1f8c}.prefix__cls-4{fill:#de1175}.prefix__cls-5{fill:#f58f90}.prefix__cls-6{fill:#394ea1}.prefix__cls-7{fill:#6cbe45}.prefix__cls-8{fill:#4db748}.prefix__cls-9{fill:#e9e619}.prefix__cls-11{fill:#3e53a4}.prefix__cls-12{fill:#394da1}.prefix__cls-13{fill:#1d6734}.prefix__cls-14{fill:#75c15f}.prefix__cls-15{fill:#f9ed23}.prefix__cls-16{fill:#686868}.prefix__cls-17{fill:#01a6aa}.prefix__cls-18{fill:#88cdac}.prefix__cls-19{fill:#2b3088}.prefix__cls-20{fill:#8f8e8e}"
