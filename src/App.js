@@ -17,12 +17,14 @@ import Spaceships from './components/Spaceships.js'
 import DiamondDark from './components/DiamondDark.js'
 import Numb from './components/Numb.js'
 
+import firebase from "firebase";
 import Home from './components/Home'
 
 
 function App() {
 
   let history = useHistory();
+  const firebaseApp = firebase.apps[0];
 
   const fillPaths = pathData =>{
       console.log("fillPaths: ", pathData);
@@ -50,6 +52,7 @@ function App() {
   //SVG routed to various name based paths
   return (
     <div className="App">
+          
        <Router> 
 
       <div className="container">

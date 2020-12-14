@@ -98,9 +98,9 @@ const Title = styled.h1`
   font-family: "Comic Sans MS";
   margin-top: 0px;
   font-style: normal;
-  opacity: 0.75;
+  opacity: 0.9;
   font-size: 10vmin;
-  background-color: #000080;
+  background-color: #FFFAFA;
 `;
 
 const HomeContainer = styled.div`
