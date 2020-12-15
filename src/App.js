@@ -93,7 +93,9 @@ function App() {
         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} className="AppTwo" />
         </div>
         <div id="footer">
-                {'developed by'} <a href="https://twitter.com/blobittyblah">@blobittyblah</a> <a href="https://twitter.com/blobittyblah">{'and the Floreo Labs Team'}</a>
+        {'Developed by'} <a href="https://twitter.com/blobittyblah">Boubacar Bah</a> and <a href="https://www.floreolabs.org">{'Floreo Labs'}</a>
+        <p>Illustration by <a href="https://www.instagram.com/arteamok/">Marcos Alvarado</a></p>
+        <p>Graphic Design Edits by <a href="https://www.instagram.com/chefkhray/">Kheperah Ray</a></p>
             </div>
       </div>
     );
