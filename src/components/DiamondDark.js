@@ -545,6 +545,9 @@ const DiamondDark = (props) =>  {
         </div>
         <div className="palette-container" >
       <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <div className="text-card">
+        <p>Welcome to Portal #9: Diamond In The Dark. Select a color from the palette then click the canvas to fill the void with color</p>
+      </div>
       <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
       </div >
       </div>

@@ -387,6 +387,9 @@ const AlienSpeak = (props) => {
       </div>
       <div className="palette-container" >
         <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+        <div className="text-card">
+        <p>Welcome to Portal #2: Alien Speak!. Select a color from the palette then click the canvas to fill the void with color</p>
+      </div>
         <button type="button" className={"home-button"} onClick={() => history.push('/')}>Home</button>
       </div >
 
