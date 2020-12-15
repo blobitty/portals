@@ -158,7 +158,7 @@ function App() {
 
         </Router>
         <div id="footer">
-        {'Developed by'} <a href="https://twitter.com/blobittyblah">Boubacar Bah</a> and <a href="floreolabs.org">{'Floreo Labs'}</a>
+        {'Developed by'} <a href="https://twitter.com/blobittyblah">Boubacar Bah</a> and <a href="https://www.floreolabs.org">{'Floreo Labs'}</a>
         <p>Illustration by <a href="https://www.instagram.com/arteamok/">Marcos Alvarado</a></p>
         <p>Graphic Design Edits by <a href="https://www.instagram.com/chefkhray/">Kheperah Ray</a></p>
             </div>
