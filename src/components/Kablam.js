@@ -22,11 +22,10 @@ const Kablam = (props) => {
   });
     return (
       <div className="coloring-page">
-        <div className="palette-container" >
-      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
-      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
-      </div >
-
+       
+       <div>
+        <iframe className={"songPlayer"} src="https://audiomack.com/embed/album/jaquell/enter-the-portal?background=1" scrolling="yes" scrollbars="yes" frameborder="2px" height={"100%"}></iframe>
+        </div>
         <div className="coloring-image-container" >
         <svg id="svg-image" viewBox="0 0 1096.17 1350.82">
           <defs>
@@ -1280,9 +1279,11 @@ const Kablam = (props) => {
         </svg>
         <button type="button" onClick={saveImage} className={"download-button"} >Download Portal</button>
         </div>
-        <div>
-        <iframe className={"songPlayer"} src="https://audiomack.com/embed/album/jaquell/enter-the-portal?background=1" scrolling="yes" scrollbars="yes" frameborder="2px" height={"100%"}></iframe>
-        </div>
+        <div className="palette-container" >
+      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
+      </div >
+        
       </div>
     )
 

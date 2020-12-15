@@ -24,10 +24,10 @@ const ACAB = (props) => {
 
     return (
       <div className="coloring-page">
-        <div className="palette-container" >
-      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
-      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
-      </div >
+        <div >
+        <iframe src="https://audiomack.com/embed/playlist/jaquell/acab-04?background=1" scrolling="no" scrollbars="no" frameborder="0" height={"100%"}></iframe>
+        </div>
+       
 
         <div className="coloring-image-container" >
         <svg id="svg-image" viewBox="0 0 432.33 567.37" >
@@ -399,9 +399,10 @@ const ACAB = (props) => {
         </svg>
         <button type="button" onClick={saveImage} className={"download-button"} >Download Portal</button>
         </div>
-        <div >
-        <iframe src="https://audiomack.com/embed/playlist/jaquell/acab-04?background=1" scrolling="no" scrollbars="no" frameborder="0" height={"100%"}></iframe>
-        </div>
+        <div className="palette-container" >
+      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
+      </div >
 
       </div>
     )

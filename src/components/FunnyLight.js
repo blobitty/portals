@@ -21,10 +21,10 @@ const FunnyLight = (props) =>  {
 
     return (
       <div className="coloring-page">
-        <div className="palette-container" >
-      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
-      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
-      </div >
+        <div>
+        <iframe src="https://audiomack.com/embed/playlist/jaquell/fitl-03?background=1" scrolling="no"  height={"100%"} scrollbars="no" frameborder="0"></iframe>
+        </div>
+        
 
         <div className="coloring-image-container" >
         <svg id="svg-image" viewBox="0 0 2482.01 3263.92">
@@ -495,9 +495,10 @@ const FunnyLight = (props) =>  {
         </svg>
         <button type="button" onClick={saveImage} className={"download-button"} >Download Portal</button>
         </div>
-        <div>
-        <iframe src="https://audiomack.com/embed/playlist/jaquell/fitl-03?background=1" scrolling="no"  height={"100%"} scrollbars="no" frameborder="0"></iframe>
-        </div>
+        <div className="palette-container" >
+      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
+      </div >
       </div>
     )
   

@@ -122,6 +122,7 @@ const imageCardStyle ={
     
     display: "flex",
     textAlign: 'center',
+    fontFamily: 'Courier New',
     alignItems: 'center',
     backgroundColor: '#fff',
     border: "1px solid #cfcfcf",
