@@ -4,6 +4,20 @@
 
 }
 
+#footer {
+  background: rgba(0, 0, 0, .6);
+  height: 2rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  text-align: right;
+  margin-bottom: 3;
+  color: white;
+  margin: 0;
+  line-height: 80%;
+  font-size: small;
+}
+
 .AppTwo {
   text-align: center;
   background-color: #769273;
@@ -140,6 +154,18 @@
   background-color: #5b7258;
   color: white;
   font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: grab;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+.enterportal-button {
+  font-family: monospace;
+  background-color: #006b72;
+  color: white;
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0px;

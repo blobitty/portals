@@ -92,13 +92,18 @@ function App() {
         <p style={{ textAlign: "center", fontFamily:"Comic Sans MS"}}>Please sign-in with your phone number. No password required</p>
         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} className="AppTwo" />
         </div>
+        <div id="footer">
+                {'developed by'} <a href="https://twitter.com/blobittyblah">@blobittyblah</a> <a href="https://twitter.com/blobittyblah">{'and the Floreo Labs Team'}</a>
+            </div>
       </div>
     );
   } else {
     //SVG routed to various name based paths
     return (
       <div className="App">
-
+            <div>
+            <Title>Enter the Portal: Coloring Book </Title>
+            </div>
         <Router>
 
           <div className="container">
@@ -152,7 +157,11 @@ function App() {
           </div>
 
         </Router>
-
+        <div id="footer">
+        {'Developed by'} <a href="https://twitter.com/blobittyblah">Boubacar Bah</a> and <a href="https://www.floreolabs.org">{'Floreo Labs'}</a>
+        <p>Illustration by <a href="https://www.instagram.com/arteamok/">Marcos Alvarado</a></p>
+        <p>Graphic Design Edits by <a href="https://www.instagram.com/chefkhray/">Kheperah Ray</a></p>
+            </div>
       </div>
 
     );
@@ -161,14 +170,13 @@ function App() {
 
 const Title = styled.h1`
   text-align: center;
-  color: #8FBC8F;
+  color: #60ad5e;
   padding: 16px;
-  font-family: "Comic Sans MS";
+  font-family: monospace;
   margin-top: 0px;
-  font-style: normal;
-  opacity: 0.9;
+  font-style: italic;
   font-size: 10vmin;
-  background-color: #FFFAFA;
+  background-color: #534bae;
 `;
 
 export default App;
