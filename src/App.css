@@ -83,6 +83,18 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.text-card {
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    margin: 2px;
+    margin-top:4px;
+    text-align: center;
+    justify-content: space-around;
+}
 .coloring-page {
   display: flex;
   padding: 30px;
@@ -132,4 +144,114 @@
   border-radius: 5px;
   margin: 10px 0px;
   cursor: grab;
+  display: inline-block;
+  word-wrap: break-word;
 }
+
+/* mobile responsive */
+
+@media (max-width: 490px) {
+
+  .main-content {
+      padding: 0 12px;
+  }
+
+  #logo {
+      padding: unset;
+  }
+
+  .carousel-container {
+      height: auto;
+      width: auto;
+  }  
+
+  .home-text {
+      width: auto;
+      margin-top: 20px;
+  }
+
+  .nav-bar {
+      display: none;
+  }
+
+  .nav-bar li {
+      padding: 1rem 0;
+      font-size: 1.2rem;
+  }
+
+  .nav-bar.active {
+      display: block;
+      position: fixed;
+      top: 5rem;
+      background: rgba(0,0,0,.97);
+      width: 100%;
+      left: 0;
+      z-index: 1;
+  }
+
+  #hamburger-menu {
+      width: 40px;
+      height: 40px;
+      display: block;
+  }
+
+  #image-gallery {
+      margin: 0;
+  }
+
+  .image-card {
+      margin: 1rem 0;
+  }
+
+  .featured-image-page {
+      margin: 0;
+  }
+
+  #quote {
+      width: auto;
+      margin: 20px;
+  }
+
+  #featured-buttons {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1rem;
+      margin: 35px 0px;
+      top: auto;
+      right: auto;
+  }
+
+  #quote {
+      width: auto;
+  }
+
+  .coloring-page {
+      flex-direction: column;
+      padding: unset;
+      align-items: center;
+  }
+
+  #coloring-image-container {
+      order: 1;
+  }
+
+  #coloring-image-container .large {
+      margin-right: auto;
+      margin-left: auto;
+  }
+  .palette-container {
+      order: 2;
+      grid-template-columns:  8ch auto;
+  }
+
+  .image-description {
+      order: 3;
+      margin: 40px 20px;
+  }
+}
+
+
+
+
+

@@ -29,7 +29,7 @@ const Home = () => {
             <div>
             <Title>Enter the Portal: Coloring Book </Title>
             </div>
-            <img src="https://i.imgur.com/kDDFvUp.png" class="rotate" width="100" height="100" />
+            <img src="//freight.cargo.site/w/300/i/05938c6fc0ab28e777e3e1ddd2696ba52157267f3c451b3f530af18114c3ea50/Jigsaw-Logo-1.png" class="rotate" width="100" height="100" />
 
             <div id="image-gallery" style={galleryStyle}>
                 
@@ -86,6 +86,8 @@ const Home = () => {
                     <button onClick={() => history.push('/numb')}>Color The Portal </button>
                 </div>
             </div>
+            <img src="https://i.imgur.com/kDDFvUp.png" class="rotate" width="100" height="100" />
+
         </div>
     )
 }
@@ -120,6 +122,7 @@ const imageCardStyle ={
     
     display: "flex",
     textAlign: 'center',
+    fontFamily: 'Courier New',
     alignItems: 'center',
     backgroundColor: '#fff',
     border: "1px solid #cfcfcf",
