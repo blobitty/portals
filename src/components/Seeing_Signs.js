@@ -23,10 +23,10 @@ const SeeingSigns = (props) =>  {
 
     return (
       <div className="coloring-page">
-        <div className="palette-container" >
-      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
-      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
-      </div >
+        <div>
+        <iframe src="https://audiomack.com/embed/playlist/jaquell/signs-05?background=1" scrolling="no" height={"100%"} scrollbars="no" frameborder="0"></iframe>
+        </div >
+        
 
         <div className="coloring-image-container" >
         <svg id="svg-image" viewBox="0 0 2482.1 3203.86" >
@@ -198,9 +198,13 @@ const SeeingSigns = (props) =>  {
         </svg>
         <button type="button" onClick={saveImage} className={"download-button"} >Download Portal</button>
         </div>
-        <div>
-        <iframe src="https://audiomack.com/embed/playlist/jaquell/signs-05?background=1" scrolling="no" height={"100%"} scrollbars="no" frameborder="0"></iframe>
-        </div >
+        <div className="palette-container" >
+      <ColorPalette currentColor={props.currentColor} changeColor={props.changeColor} />
+      <div className="text-card">
+        <p>Welcome to Portal #5: Seeing Signs. Select a color from the palette then click the canvas to fill the void with color</p>
+      </div>
+      <button type="button"  className={"home-button"} onClick={() => history.push('/')}>Home</button>
+      </div >
       </div>
     )
 }
