@@ -21,8 +21,8 @@
 .AppTwo {
   text-align: center;
   background-color: #769273;
-  margin:0px;
-
+  width: 100vw;
+  min-height: 75vh;
 }
 
 .App-logo {
