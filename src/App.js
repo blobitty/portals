@@ -93,9 +93,9 @@ function App() {
         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} className="AppTwo" />
         </div>
         <div id="footer">
-        {'Developed by'} <a href="https://twitter.com/blobittyblah">Boubacar Bah</a>
-        <p>Illustration by <a href="https://www.instagram.com/arteamok/">Marcos Alvarado</a></p>
-        <p>Graphic Design Edits by <a href="https://www.instagram.com/chefkhray/">Kheperah Ray</a></p>
+        {'Developed by'} <a style={{ color:"white"}} href="https://twitter.com/blobittyblah">Boubacar Bah</a>
+        <p>Illustration by <a style={{ color:"white"}} href="https://www.instagram.com/arteamok/">Marcos Alvarado</a></p>
+        <p>Graphic Design Edits by <a style={{ color:"white"}} href="https://www.instagram.com/chefkhray/">Kheperah Ray</a></p>
             </div>
       </div>
     );
@@ -160,9 +160,9 @@ function App() {
 
         </Router>
         <div id="footer">
-        {'Developed by'} <a href="https://twitter.com/blobittyblah">Boubacar Bah</a> and <a href="https://www.floreolabs.org">{'Floreo Labs'}</a>
-        <p>Illustration by <a href="https://www.instagram.com/arteamok/">Marcos Alvarado</a></p>
-        <p>Graphic Design Edits by <a href="https://www.instagram.com/chefkhray/">Kheperah Ray</a></p>
+        {'Developed by'} <a style={{ color:"white"}} href="https://twitter.com/blobittyblah">Boubacar Bah</a> and <a href="https://www.floreolabs.org">{'Floreo Labs'}</a>
+        <p>Illustration by <a style={{ color:"white"}} href="https://www.instagram.com/arteamok/">Marcos Alvarado</a></p>
+        <p>Graphic Design Edits by <a style={{ color:"white"}} href="https://www.instagram.com/chefkhray/">Kheperah Ray</a></p>
             </div>
       </div>
 
