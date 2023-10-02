@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "18.17.0",
-    "yarn": "1.22.11"
+    "node": "18.17.0"
   },
   "dependencies": {
     "@react-firebase/auth": "^0.2.10",
