@@ -176,7 +176,6 @@ const Title = styled.h1`
   padding: 16px;
   font-family: monospace;
   margin-top: 0px;
-  font-style: italic;
   font-size: 10vmin;
   background-color: #534bae;
 `;

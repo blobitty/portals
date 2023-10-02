@@ -7,13 +7,13 @@ import firebase from "firebase";
 
 
 firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_KEY, 
-  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyC2vUUDZ4L4qkUEJLVfRZ9Rzx3BA_Vhkt0",
+  authDomain: "eternal-portals.firebaseapp.com",
+  projectId: "eternal-portals",
+  storageBucket: "eternal-portals.appspot.com",
+  messagingSenderId: "517907487072",
+  appId: "1:517907487072:web:a9e33c27480be539dea605",
+  measurementId: "G-N8Y2WMBPKS"
 })
 
 ReactDOM.render(
