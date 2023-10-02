@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "18.17.1",
-    "yarn": "1.22.17"
+    "node": "18.17.0",
+    "yarn": "1.22.11"
   },
   "dependencies": {
     "@react-firebase/auth": "^0.2.10",
@@ -14,7 +14,6 @@
     "@testing-library/user-event": "^7.1.2",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "firebase": "^8.2.0",
-    "node-sass": "4.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",
